@@ -1,15 +1,21 @@
 :root {
-  --primaryColor: hsl(43, 19%, 93%);
+  --primaryColor: hsl(0, 0%, 100%);
   --secondaryColor: hsl(212, 28%, 40%);
   --textColor: black;
-  --backgroundImage: url("../public/light-background.svg")
+  --backgroundImage: url("../public/light-background.svg");
+  --flagColorOne: var(--secondaryColor);
+  --flagColorTwo: var(--secondaryColor);
+  --flagColorThree: var(--secondaryColor);
 }
 
 .dark {
   --primaryColor: hsl(0, 0%, 25%);
   --secondaryColor: hsl(212, 28%, 40%);
   --textColor: white;
-  --backgroundImage: url("../public/dark-background.svg")
+  --backgroundImage: url("../public/dark-background.svg");
+  --flagColorOne: hsl(108, 70%, 80%);
+  --flagColorTwo: hsl(0, 0%, 90%);
+  --flagColorThree: hsl(14, 70%, 80%);
 }
 
 .app {
@@ -47,7 +53,7 @@
 .main_content {
   display: flex;
   margin-top: 4rem;
-  justify-content: space-around;
+  justify-content: center;
   height: 46rem;
   width: 100vw;
   .title_info {
@@ -60,17 +66,73 @@
       font-weight: lighter;
       margin: 0;
       padding-left: 3rem;
+      vertical-align: text-top;
     }
     .info {
       flex-grow: 1;
-      border-style: solid;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      outline-style: solid;
+      outline-offset: -1px;
+      outline-width: 1px;
+      margin-right: 3rem;
+      padding: 0.5rem;
       width: 30rem;
-      color: var(--textColor);
+      color: var(--secondaryColor);
+      .row {
+        display: flex;
+      }
+      .colorOne {
+        color: var(--flagColorOne);
+      }
+      .colorTwo {
+        color: var(--flagColorTwo);
+      }
+      .colorThree {
+        color: var(--flagColorThree);
+      }
+      .section {
+        font-weight: lighter;
+        font-size: 1.75rem;
+        text-decoration: underline;
+        margin: 0;
+      }
+      .type {
+        font-weight: bolder;
+        margin-bottom: 0;
+
+      }
+      .data {
+        margin-bottom: 0;
+        // margin-left: .5rem;
+      }
+      h2 {
+        color: var(--textColor);
+        width: 100%;
+        text-align: center;
+        margin-top: 0;
+      }
+      background-color: var(--primaryColor);
     }
   }
   .menu {
-    border-style: solid;
-    width: 40rem;
+    outline-style: solid;
+    outline-offset: -1px;
+    outline-width: 1px;
+    box-shadow: 0px 3px 6px 0.5px rgba(0, 0, 0, 0.5);
+    width: 50rem;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    .nav {
+      background-color: var(--secondaryColor);
+      flex-grow: 1;
+      max-width: 25%;
+    }
+    .selected {
+      background-color: var(--primaryColor);
+      flex-grow: 1;
+    }
   }
 }
