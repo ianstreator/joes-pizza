@@ -1,14 +1,48 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
+import Pizza from "../components/pizza";
+import Pasta from "../components/pasta";
+
 
 export default function Home() {
+  const [selected, setSelected] = useState("test");
+  const menuItems = {
+    "Pizza": <Pizza />,
+
+    "Appetizers": <Pizza />,
+
+    "Salads": <Pizza />,
+
+    "Sandwiches": <Pizza />,
+
+    "Burgers": <Pizza />,
+
+    "Pastas": <Pasta />,
+
+    "Dinners": <Pizza />,
+
+    "Beverages": <Pizza />,
+
+    "Desserts": <Pizza />,
+  };
+  const select = (e) => {
+    const value = e.target.outerText
+    setSelected(value);
+  };
   const image_size = 50;
-  const changeTheme = () => {
+  const changeTheme = (e) => {
     const theme = document.getElementById("theme");
+    const toggle = document.getElementById("toggle");
+    console.log(toggle.children);
     if (theme.classList.contains("dark")) {
       theme.classList.remove("dark");
+      toggle.children[1].style.cssText = "opacity:0; z-index:-1;";
+      toggle.children[0].style.cssText = "opacity:1; z-index:1;";
     } else {
       theme.classList.add("dark");
+      toggle.children[0].style.cssText = "opacity:0; z-index:-1;";
+      toggle.children[1].style.cssText = "opacity:1; z-index:1;";
     }
   };
   return (
@@ -25,14 +59,23 @@ export default function Home() {
           rel="stylesheet"
         ></link>
       </Head>
-      <main className="app" id="theme">
+      <main className="app light" id="theme">
         <header className="header">
           <h2>{"The Best Pizza In Schaumburg - Call Now: (847) 524-2204"}</h2>
-          <div className="toggle">
-            <div className="icon">
+          <div className="toggle" id="toggle">
+            <div className="icon light">
               <Image
                 src="/light.svg"
                 alt="light-theme"
+                width={image_size}
+                height={image_size}
+                onClick={changeTheme}
+              ></Image>
+            </div>
+            <div className="icon dark">
+              <Image
+                src="/dark.svg"
+                alt="dark-theme"
                 width={image_size}
                 height={image_size}
                 onClick={changeTheme}
@@ -44,7 +87,6 @@ export default function Home() {
           <div className="title_info">
             <h1 className="title">{"Joe's Pizza"}</h1>
             <div className="info">
-              {/* <h2>Facility Information</h2> */}
               <div className="colorOne">
                 <h3 className="section">Location</h3>
                 <div className="row">
@@ -68,27 +110,37 @@ export default function Home() {
               <div className="colorThree">
                 <h3 className="section">Hours</h3>
                 <div>
-                    <p className="type">Monday</p>
-                    <p className="data">*we are closed on Mondays*</p>
+                  <p className="type">Monday</p>
+                  <p className="data">*we are closed on Mondays*</p>
                 </div>
                 <div>
-                    <p className="type">Tuesday, Wednesday, Thursday</p>
-                    <p className="data">11:00 AM - 9:00 PM</p>
+                  <p className="type">Tuesday, Wednesday, Thursday</p>
+                  <p className="data">11:00 AM - 9:00 PM</p>
                 </div>
                 <div>
-                    <p className="type">Friday, Saturday</p>
-                    <p className="data">11:00 AM - 10:00 PM</p>
+                  <p className="type">Friday, Saturday</p>
+                  <p className="data">11:00 AM - 10:00 PM</p>
                 </div>
                 <div>
-                    <p className="type">Sunday</p>
-                    <p className="data">4:00 PM - 9:00 PM</p>
+                  <p className="type">Sunday</p>
+                  <p className="data">4:00 PM - 9:00 PM</p>
                 </div>
               </div>
             </div>
           </div>
           <div className="menu">
-            <nav className="nav"></nav>
-            <div className="selected"></div>
+            <nav className="nav">
+              <h2>Menu</h2>
+              <ul id="menu_list">
+                {Object.entries(menuItems).map((item) => {
+                  
+                  return <li onClick={select}>{item[0]}</li>
+                  // return <Item key={item[0]} onClick={select} value={item[0]}>{item[0]}</Item>;
+                  
+                })}
+              </ul>
+            </nav>
+            <div className="selected">{menuItems[selected]}</div>
           </div>
         </div>
         <footer></footer>

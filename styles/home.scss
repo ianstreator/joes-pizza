@@ -30,22 +30,34 @@
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--secondaryColor);
   color: white;
   width: 100vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
   .toggle {
+    display: flex;
+    justify-content: space-between;
     width: 6rem;
     border-radius: 25px;
     padding: 0.25rem;
     background-color: var(--primaryColor);
+    transition: 500ms;
+
     .icon {
       background-color: var(--secondaryColor);
       border-radius: 50%;
       width: 2.5rem;
       height: 2.5rem;
       padding: 0.25rem;
+      transition: 100ms;
+      cursor: pointer;
+      &.dark {
+        opacity: 0;
+        z-index: -1;
+      }
     }
   }
 }
@@ -66,13 +78,13 @@
       font-weight: lighter;
       margin: 0;
       padding-left: 3rem;
-      vertical-align: text-top;
+      vertical-align: top;
     }
     .info {
       flex-grow: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-between;
       outline-style: solid;
       outline-offset: -1px;
       outline-width: 1px;
@@ -85,12 +97,21 @@
       }
       .colorOne {
         color: var(--flagColorOne);
+        .data {
+          margin-left: 0.5rem;
+        }
       }
       .colorTwo {
         color: var(--flagColorTwo);
+        .data {
+          margin-left: 0.5rem;
+        }
       }
       .colorThree {
         color: var(--flagColorThree);
+        .data {
+          margin-top: 0.25rem;
+        }
       }
       .section {
         font-weight: lighter;
@@ -101,11 +122,9 @@
       .type {
         font-weight: bolder;
         margin-bottom: 0;
-
       }
       .data {
         margin-bottom: 0;
-        // margin-left: .5rem;
       }
       h2 {
         color: var(--textColor);
@@ -127,12 +146,37 @@
     flex-direction: row;
     .nav {
       background-color: var(--secondaryColor);
+      color: white;
+      display: flex;
+      flex-direction: column;
       flex-grow: 1;
-      max-width: 25%;
+      min-width: 10rem;
+      max-width: 20%;
+      h2 {
+        width: 100%;
+        text-decoration: underline;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: lighter;
+        margin: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        flex-grow: 1;
+        li {
+            list-style: none;
+        }
+      }
     }
     .selected {
       background-color: var(--primaryColor);
       flex-grow: 1;
+      color: black;
     }
   }
 }
