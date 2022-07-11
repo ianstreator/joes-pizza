@@ -131,12 +131,9 @@ export default function Home() {
           <div className="menu">
             <nav className="nav">
               <h2>Menu</h2>
-              <ul id="menu_list">
+              <ul>
                 {Object.entries(menuItems).map((item) => {
-                  
                   return <li onClick={select}>{item[0]}</li>
-                  // return <Item key={item[0]} onClick={select} value={item[0]}>{item[0]}</Item>;
-                  
                 })}
               </ul>
             </nav>
