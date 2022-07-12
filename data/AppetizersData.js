@@ -24,7 +24,7 @@ const Appetizers = {
   },
   soloAppetizers: {
     "Onion Rings": [5.99, "Mound of crispy rings, enough to share."],
-    "Calamari": [
+    Calamari: [
       9.75,
       "An Italian classic, succulent squid deep fried to perfection in an Italian-style batter.",
     ],
