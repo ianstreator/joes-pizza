@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import Header from "../components/Header";
-import Facility_Info from "../components/Facility_Info";
+import Information from "../components/Information";
 import Menu from "../components/Menu";
 
 export default function Home() {
@@ -19,13 +19,13 @@ export default function Home() {
           rel="stylesheet"
         ></link>
       </Head>
-      <body className="app light" id="theme">
+      <main className="app" id="theme">
         <Header />
         <div className="main_content">
-          <Facility_Info />
+          <Information />
           <Menu />
         </div>
-      </body>
+      </main>
     </div>
   );
 }

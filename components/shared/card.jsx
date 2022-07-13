@@ -1,6 +1,6 @@
-function Card({ item, value, onClick }) {
+function Card({ children, value, onClick, className }) {
   return (
-    <div onClick={onClick} value={value}>{item}</div>
+    <div className={className} onClick={onClick} value={value}>{children}</div>
   )
 }
 

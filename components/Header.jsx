@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Header() {
   const image_size = 50;
-  const changeTheme = (e) => {
+  const changeTheme = () => {
     const theme = document.getElementById("theme");
     const toggle = document.getElementById("toggle");
     console.log(toggle.children);

@@ -1,4 +1,4 @@
-function Facility_Info() {
+function Information() {
   return (
     <div className="title_info">
     <h1 className="title">{"Joe's Pizza"}</h1>
@@ -47,4 +47,4 @@ function Facility_Info() {
   )
 }
 
-export default Facility_Info
+export default Information

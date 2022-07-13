@@ -13,7 +13,7 @@ import { useState } from "react";
 
 function Menu() {
   const [selected, setSelected] = useState("test");
-  const menuItems = {
+  const menuCategories = {
     Pizza: <Pizza />,
 
     Appetizers: <Appetizers />,
@@ -33,7 +33,10 @@ function Menu() {
     Desserts: <Desserts />,
   };
   const select = (e) => {
-    const value = e.target.outerText;
+    // const value = e.target.outerText;
+    const value = e.target.attributes.value.value;
+    console.log(value)
+
     setSelected(value);
   };
   return (
@@ -41,12 +44,12 @@ function Menu() {
       <nav className="nav">
         <h2>Menu</h2>
         <ul>
-          {Object.entries(menuItems).map((item) => {
-            return <li onClick={select}>{item[0]}</li>;
+          {Object.keys(menuCategories).map((category) => {
+            return <li key={category} onClick={select} value={category}>{category}</li>;
           })}
         </ul>
       </nav>
-      <div className="selected">{menuItems[selected]}</div>
+      <div className="selected">{menuCategories[selected]}</div>
     </div>
   );
 }
