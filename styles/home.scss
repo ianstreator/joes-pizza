@@ -150,7 +150,7 @@
       display: flex;
       flex-direction: column;
       flex-grow: 1;
-      min-width: 10rem;
+      min-width: 20%;
       max-width: 20%;
       h2 {
         width: 100%;
@@ -179,6 +179,7 @@
       flex-grow: 1;
       color: var(--textColor);
       padding: 1rem;
+      width: 100%;
       .row {
         display: flex;
         justify-content: space-between;
@@ -195,8 +196,30 @@
   flex-direction: column;
   position: relative;
   justify-content: flex-start;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   h1 {
     margin: unset;
+  }
+  .clear_all {
+    width: fit-content;
+    position: sticky;
+    bottom: 0;
+    margin-left: auto;
+    padding: .5rem;
+    background-color: var(--primaryColor);
+    color: var(--textColor);
+    border-color: var(--secondaryColor);
+    border-radius: 5px;
+    border-style: solid;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--hoverColor);
+    }
   }
   .container {
     position: relative;
@@ -213,23 +236,54 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      &.null {
+        filter: opacity(0.25);
+        &:hover {
+          cursor: default;
+          background-color: unset;
+        }
+        user-select: none;
+      }
       .option {
         border: solid var(--textColor) 1px;
         border-radius: 4px;
         min-width: 4rem;
-        max-width: 8rem;
+        max-width: 8.5rem;
         height: 3rem;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: .5rem;
+        padding: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
         margin-right: 1rem;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
         cursor: pointer;
         &:hover {
           background-color: var(--hoverColor);
         }
+        &.null {
+          filter: opacity(0.25);
+          &:hover {
+            cursor: default;
+            background-color: unset;
+          }
+          user-select: none;
+        }
+      }
+    }
+    .toppings {
+      display: flex;
+      flex-direction: column;
+      h3 {
+        margin-top: 0;
+      }
+      .topping_category {
+        display: flex;
+        padding-top: 0.5rem;
+        flex-wrap: wrap;
+        width: 95%;
       }
     }
     .selected {
@@ -244,7 +298,7 @@
 
   .menu_header {
     h1 {
-        margin: .5rem;
+      margin: 0.5rem;
     }
   }
   .row {
