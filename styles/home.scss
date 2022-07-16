@@ -3,6 +3,7 @@
   --secondaryColor: hsl(212, 28%, 40%);
   --textColor: black;
   --hoverColor: hsl(212, 40%, 60%);
+  --selectedColor: hsl(212, 35%, 65%);
   --backgroundImage: url("../public/light-background.svg");
   --flagColorOne: var(--secondaryColor);
   --flagColorTwo: var(--secondaryColor);
@@ -150,7 +151,7 @@
       display: flex;
       flex-direction: column;
       flex-grow: 1;
-      min-width: 20%;
+      min-width: 25%;
       max-width: 20%;
       h2 {
         width: 100%;
@@ -200,6 +201,8 @@
   &::-webkit-scrollbar {
     display: none;
   }
+  .pizza_toggle {
+  }
   h1 {
     margin: unset;
   }
@@ -208,17 +211,18 @@
     position: sticky;
     bottom: 0;
     margin-left: auto;
-    padding: .5rem;
+    padding: 0.5rem;
     background-color: var(--primaryColor);
     color: var(--textColor);
-    border-color: var(--secondaryColor);
+    border-color: var(--hoverColor);
     border-radius: 5px;
+    border-width: 3px;
     border-style: solid;
     font-weight: bolder;
     font-size: 20px;
     cursor: pointer;
     &:hover {
-        background-color: var(--hoverColor);
+      background-color: var(--hoverColor);
     }
   }
   .container {
@@ -271,6 +275,9 @@
           }
           user-select: none;
         }
+        &.chosen {
+          background-color: var(--selectedColor);
+        }
       }
     }
     .toppings {
@@ -293,6 +300,12 @@
       padding: 0;
       max-width: 25%;
       text-align: end;
+      display: flex;
+      flex-direction: column;
+      p {
+        margin: 0.25rem;
+        font-weight: bolder;
+      }
     }
   }
 

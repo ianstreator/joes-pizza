@@ -3,57 +3,105 @@ import Card from "../shared/Card";
 import PizzaData from "../../data/PizzaData";
 
 function Pizza() {
-  const [view, setView] = useState("View Specialty Pizza's");
-  const [cost, setCost] = useState(0.0);
-  const [size, setSize] = useState(false);
-  const [crust, setCrust] = useState(false);
+  const [view, setView] = useState("Our Specialty Pizza's");
+  const [cost, setCost] = useState(0);
+  const [size, setSize] = useState("");
+  const [crust, setCrust] = useState("");
   const [toppings, setToppings] = useState([]);
-  const specialtyPizza = PizzaData.specialtyPizza;
+  const specialtyPizza = PizzaData.SpecialtyPizza;
   const buildYourOwnPizza = PizzaData.BuildYourOwnPizza;
-  const componentValue = (e) => {
-    return e.target.attributes.value.value;
+  const componentValue = (e, type) => {
+    if (typeof type === "string") {
+      return e.target.outerText;
+    } else if (typeof type === "number") {
+      console.log(e.target.attributes);
+      return e.target.attributes.value.value;
+    }
+  };
+  const selectComponent = (e, multi) => {
+    if (!multi) {
+      Object.values(e.nativeEvent.path[1].children).forEach((e) => {
+        e.classList.remove("chosen");
+      });
+      e.target.classList.add("chosen");
+    } else {
+      if (e.target.classList.value.includes("chosen")) {
+        e.target.classList.remove("chosen");
+      } else {
+        e.target.classList.add("chosen");
+      }
+    }
   };
 
   const changeView = () => {
-    if (view === "Create Your Own Pizza") {
-      setView("View Specialty Pizza's");
+    if (view === "Build Your Own Pizza") {
+      setView("Our Specialty Pizza's");
     } else {
-      setView("Create Your Own Pizza");
+      setView("Build Your Own Pizza");
     }
   };
 
   const selectSize = (e) => {
-    setSize(componentValue(e));
-    setCrust(false);
+    setCost(0);
+    setSize(componentValue(e, 1));
+    setCrust("");
+    setToppings([]);
+    const chosen = Object.values(document.getElementsByClassName("chosen"));
+    chosen.forEach((e) => e.classList.remove("chosen"));
+    selectComponent(e, false);
   };
   const selectCrust = (e) => {
-    const newCost = cost + Number(componentValue(e));
-    if (cost !== 0) {
-      setCost((cost += newCost));
-      return;
-    }
+    selectComponent(e, false);
+    setCost(Number(componentValue(e, 1)));
 
-    setCrust(e.target.outerText);
-    setCost((cost += Number(componentValue(e))));
+    setCrust(componentValue(e, ""));
   };
   const selectTopping = (e) => {
-    setToppings(componentValue(e));
+    selectComponent(e, true);
+    if (toppings.includes(componentValue(e, ""))) {
+      setToppings((curr) => [
+        ...curr.filter((topping) => topping !== componentValue(e, "")),
+      ]);
+    } else {
+      setToppings((curr) => [...curr, componentValue(e, "")]);
+    }
   };
 
   const clearAllSelections = () => {
-    setSize(false);
-    setCrust(false);
-    setToppings(false);
-    setCost(0.0);
+    setSize("");
+    setCrust("");
+    setToppings([]);
+    setCost(0);
+    const chosen = Object.values(document.getElementsByClassName("chosen"));
+    chosen.forEach((e) => e.classList.remove("chosen"));
   };
 
-  if (view === "View Specialty Pizza's") {
+  useEffect(() => {
+    if (toppings[0]) {
+      const costOfCrust =
+        PizzaData.BuildYourOwnPizza.Crust[crust][
+          Object.values(buildYourOwnPizza.Size).indexOf(size)
+        ];
+      console.log(costOfCrust);
+      const pricePerTopping =
+        buildYourOwnPizza.Toppings.Price.Full[
+          buildYourOwnPizza.Size.indexOf(size)
+        ];
+      const costOfToppings = toppings.length * pricePerTopping;
+
+      setCost((curr) => curr + costOfToppings);
+    }
+  }, [crust, toppings]);
+
+  if (view === "Our Specialty Pizza's") {
     return (
       <div className="pizza">
-        <button onClick={changeView}>{view}</button>
+        <button className="pizza_toggle" onClick={changeView}>
+          {view}
+        </button>
 
         <div className="menu_header row">
-          <h1>Pizza</h1>
+          <h1>Build Your Own Pizza</h1>
           <h1>{`$ ${cost.toFixed(2)}`}</h1>
         </div>
         <div className="container row">
@@ -78,8 +126,8 @@ function Pizza() {
           <div className={`options`}>
             {Object.entries(buildYourOwnPizza.Crust).map((crust) => {
               const crustValue =
-                crust[1][Object.values(buildYourOwnPizza.Size).indexOf(size)]; 
-              if (crustValue === null || size === false) {
+                crust[1][Object.values(buildYourOwnPizza.Size).indexOf(size)];
+              if (crustValue === null || size === "") {
                 return (
                   <Card
                     key={crust[0]}
@@ -108,7 +156,7 @@ function Pizza() {
         <div className="container row">
           <h2 className="section">Toppings</h2>
           <div className="options toppings">
-            {Object.entries(buildYourOwnPizza.Toppings).map(
+            {Object.entries(buildYourOwnPizza.Toppings.Types).map(
               (topping_category) => {
                 return (
                   <>
@@ -116,15 +164,27 @@ function Pizza() {
 
                     <div key={topping_category} className="topping_category">
                       {topping_category[1].map((topping) => {
-                        return (
-                          <Card
-                            key={topping}
-                            className={"option"}
-                            onClick={selectTopping}
-                            children={topping}
-                            value={topping}
-                          />
-                        );
+                        if (crust === "") {
+                          return (
+                            <Card
+                              key={topping}
+                              className={"option null"}
+                              onClick={null}
+                              children={topping}
+                              value={topping}
+                            />
+                          );
+                        } else {
+                          return (
+                            <Card
+                              key={topping}
+                              className={"option"}
+                              onClick={selectTopping}
+                              children={topping}
+                              value={topping}
+                            />
+                          );
+                        }
                       })}
                     </div>
                   </>
@@ -132,7 +192,11 @@ function Pizza() {
               }
             )}
           </div>
-          <h2 className="selected">{`${toppings}`}</h2>
+          <div className="selected">
+            {toppings.map((topping) => {
+              return <p>{`${topping}`}</p>;
+            })}
+          </div>
         </div>
         <button className="clear_all" onClick={clearAllSelections}>
           Clear
@@ -142,8 +206,10 @@ function Pizza() {
   } else {
     return (
       <div className="Pizza">
-        <button onClick={changeView}>{view}</button>
-        <h1>Specialty Pizza</h1>
+        <button className="pizza_toggle" onClick={changeView}>
+          {view}
+        </button>
+        <h1>Our Specialty Pizza's</h1>
       </div>
     );
   }
