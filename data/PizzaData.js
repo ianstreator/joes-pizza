@@ -3,7 +3,7 @@ const PizzaData = {
     Size: ['10"', '12"', '14"', '16"', '18"'],
     Crust: {
       "Thin or X-Thin": [10.0, 12.0, 14.0, 16.0, 18.0],
-      "Sicilian Style Thick": [12.0, 14.0, 16.0, 19.0, 20.0],
+      "Sicilian Style Thick Crust": [12.0, 14.0, 16.0, 19.0, 20.0],
       "Pan Pizza": [null, 17.0, null, 24.0, null],
       "Chicago Style Deep Dish": [null, 17.0, null, 24.0, null],
       "The Original Stuffed Joe": [null, 17.0, null, 24.0, null],
