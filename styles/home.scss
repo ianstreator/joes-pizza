@@ -1,6 +1,7 @@
 :root {
   --primaryColor: hsl(0, 0%, 100%);
   --secondaryColor: hsl(212, 28%, 40%);
+  --backgroundColor: hsl(43, 19%, 93%);
   --textColor: black;
   --hoverColor: hsl(212, 40%, 60%);
   --selectedColor: hsl(212, 35%, 65%);
@@ -12,10 +13,8 @@
 
 .dark {
   --primaryColor: hsl(0, 0%, 25%);
-  //   --secondaryColor: hsl(212, 28%, 40%);
+  --backgroundColor: hsl(0, 0%, 13%);
   --textColor: white;
-  //   --hoverColor: grey;
-
   --backgroundImage: url("../public/dark-background.svg");
   --flagColorOne: hsl(108, 70%, 80%);
   --flagColorTwo: hsl(0, 0%, 90%);
@@ -26,7 +25,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--primaryColor);
+  background-color: var(--backgroundColor);
   background-image: var(--backgroundImage);
   background-size: contain;
   height: 100vh;
@@ -47,7 +46,7 @@
     width: 6rem;
     border-radius: 25px;
     padding: 0.25rem;
-    background-color: var(--primaryColor);
+    background-color: var(--backgroundColor);
     transition: 500ms;
 
     .icon {
@@ -95,6 +94,7 @@
       margin-right: 3rem;
       padding: 0.5rem;
       width: 30rem;
+      font-size: 1.1rem;
       color: var(--secondaryColor);
       .row {
         display: flex;
@@ -124,11 +124,12 @@
         margin: 0;
       }
       .type {
-        font-weight: bolder;
+        font-weight: 700;
         margin-bottom: 0;
       }
       .data {
         margin-bottom: 0;
+        font-weight: 500;
       }
       h2 {
         color: var(--textColor);
@@ -142,6 +143,7 @@
   .menu {
     box-shadow: 0px 3px 6px 0.5px rgba(0, 0, 0, 0.25);
     width: 60rem;
+    min-width: 40rem;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -155,7 +157,7 @@
       max-width: 20%;
       h2 {
         width: 100%;
-        text-decoration: underline;
+        text-decoration: underline 3px;
         text-align: center;
         font-size: 3rem;
         font-weight: lighter;
@@ -166,12 +168,24 @@
         padding: 0;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-between;
         text-align: center;
         flex-grow: 1;
         li {
           list-style: none;
           font-size: 1.5rem;
+          height: 4.5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          cursor: pointer;
+          transition: 200ms;
+          &:hover,
+          &:active {
+            background-color: var(--primaryColor);
+            color: var(--textColor);
+            text-decoration: underline;
+          }
         }
       }
     }

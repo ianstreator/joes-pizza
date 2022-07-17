@@ -1,7 +1,10 @@
 
 function Appetizers() {
   return (
-    <div>Appetizers</div>
+    <div className="appetizers">
+      <h1>Appetizers</h1>
+      
+    </div>
   )
 }
 
