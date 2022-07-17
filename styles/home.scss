@@ -184,7 +184,6 @@
           &:active {
             background-color: var(--primaryColor);
             color: var(--textColor);
-            text-decoration: underline;
           }
         }
       }
@@ -212,8 +211,7 @@
     bottom: 0;
     position: absolute;
     width: 100%;
-    display: block;
-    height: 200px;
+    height: 120px;
     pointer-events: none;
   }
 }

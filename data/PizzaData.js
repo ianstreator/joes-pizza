@@ -6,7 +6,7 @@ const PizzaData = {
       "Sicilian Style Thick Crust": [12.0, 14.0, 16.0, 19.0, 20.0],
       "Pan Pizza": [null, 17.0, null, 24.0, null],
       "Chicago Style Deep Dish": [null, 17.0, null, 24.0, null],
-      "The Original Stuffed Joe": [null, 17.0, null, 24.0, null],
+      "Original Stuffed Joe": [null, 17.0, null, 24.0, null],
       'Gluten Free 12" Only': [null, 12.0, null, null, null],
     },
     Toppings: {

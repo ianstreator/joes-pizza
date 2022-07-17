@@ -13,7 +13,6 @@ function BuildYourOwnPizza() {
     if (typeof type === "string") {
       return e.target.outerText;
     } else if (typeof type === "number") {
-      console.log(e.target.attributes);
       return e.target.attributes.value.value;
     }
   };
@@ -87,104 +86,112 @@ function BuildYourOwnPizza() {
   }, [crust, toppings]);
   return (
     <div className="pizza">
-      <div className="menu_header row">
-        <h1>Build Your Own Pizza</h1>
-        <h1>{`$ ${cost.toFixed(2)}`}</h1>
-      </div>
-      <div className="container row">
-        <h2 className="section">Size</h2>
-        <div className="options">
-          {Object.values(buildYourOwnPizza.Size).map((size) => {
-            return (
-              <Card
-                key={size}
-                className={"option"}
-                onClick={selectSize}
-                children={size}
-                value={size}
-              />
-            );
-          })}
+      <div className="receipt">
+        <h1 className="title">{"Joe's Pizza"}</h1>
+
+        <h5>{`Size & Crust`}</h5>
+        <p>{`${size} ${crust}`}</p>
+        <div className="toppings_container">
+          <h5>Toppings</h5>
+          <div className="toppings">
+            {toppings.map((topping) => {
+              return <p className="topping">{topping}</p>;
+            })}
+          </div>
         </div>
-        <h2 className="selected size">{`${size}`}</h2>
+
+        <h1 className="cost">{`$${cost.toFixed(2)}`}</h1>
       </div>
-      <div className="container row">
-        <h2 className="section">Crust</h2>
-        <div className={`options`}>
-          {Object.entries(buildYourOwnPizza.Crust).map((crust) => {
-            const crustValue =
-              crust[1][Object.values(buildYourOwnPizza.Size).indexOf(size)];
-            if (crustValue === null || size === "") {
+
+      <div className="scroll_options">
+        <div className="container row">
+          <h2 className="section">Size</h2>
+          <div className="options">
+            {Object.values(buildYourOwnPizza.Size).map((size) => {
               return (
                 <Card
-                  key={crust[0]}
-                  className={"option null"}
-                  onClick={null}
-                  children={crust[0]}
-                  value={crustValue}
-                />
-              );
-            } else {
-              return (
-                <Card
-                  key={crust[0]}
+                  key={size}
                   className={"option"}
-                  onClick={selectCrust}
-                  children={crust[0]}
-                  value={crustValue}
+                  onClick={selectSize}
+                  children={size}
+                  value={size}
                 />
               );
-            }
-          })}
+            })}
+          </div>
         </div>
+        <div className="container row">
+          <h2 className="section">Crust</h2>
+          <div className={`options`}>
+            {Object.entries(buildYourOwnPizza.Crust).map((crust) => {
+              const crustValue =
+                crust[1][Object.values(buildYourOwnPizza.Size).indexOf(size)];
+              if (crustValue === null || size === "") {
+                return (
+                  <Card
+                    key={crust[0]}
+                    className={"option null"}
+                    onClick={null}
+                    children={crust[0]}
+                    value={crustValue}
+                  />
+                );
+              } else {
+                return (
+                  <Card
+                    key={crust[0]}
+                    className={"option"}
+                    onClick={selectCrust}
+                    children={crust[0]}
+                    value={crustValue}
+                  />
+                );
+              }
+            })}
+          </div>
+        </div>
+        <div className="container row">
+          <h2 className="section">Toppings</h2>
+          <div className="options toppings">
+            {Object.entries(buildYourOwnPizza.Toppings.Types).map(
+              (topping_category) => {
+                return (
+                  <>
+                    <h3 key={Math.random()}> {topping_category[0]}</h3>
 
-        <h2 className="selected">{`${crust}`}</h2>
+                    <div key={topping_category} className="topping_category">
+                      {topping_category[1].map((topping) => {
+                        if (crust === "") {
+                          return (
+                            <Card
+                              key={topping}
+                              className={"option null"}
+                              onClick={null}
+                              children={topping}
+                              value={topping}
+                            />
+                          );
+                        } else {
+                          return (
+                            <Card
+                              key={topping}
+                              className={"option"}
+                              onClick={selectTopping}
+                              children={topping}
+                              value={topping}
+                            />
+                          );
+                        }
+                      })}
+                    </div>
+                  </>
+                );
+              }
+            )}
+          </div>
+        </div>
       </div>
-      <div className="container row">
-        <h2 className="section">Toppings</h2>
-        <div className="options toppings">
-          {Object.entries(buildYourOwnPizza.Toppings.Types).map(
-            (topping_category) => {
-              return (
-                <>
-                  <h3 key={Math.random()}> {topping_category[0]}</h3>
 
-                  <div key={topping_category} className="topping_category">
-                    {topping_category[1].map((topping) => {
-                      if (crust === "") {
-                        return (
-                          <Card
-                            key={topping}
-                            className={"option null"}
-                            onClick={null}
-                            children={topping}
-                            value={topping}
-                          />
-                        );
-                      } else {
-                        return (
-                          <Card
-                            key={topping}
-                            className={"option"}
-                            onClick={selectTopping}
-                            children={topping}
-                            value={topping}
-                          />
-                        );
-                      }
-                    })}
-                  </div>
-                </>
-              );
-            }
-          )}
-        </div>
-        <div className="selected">
-          {toppings.map((topping) => {
-            return <p>{`${topping}`}</p>;
-          })}
-        </div>
-      </div>
       <button className="clear_all" onClick={clearAllSelections}>
         Clear
       </button>

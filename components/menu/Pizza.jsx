@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import BuildYourOwnPizza from "./pizza/BuildYourOwnPizza";
 
 function Pizza() {
