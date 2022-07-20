@@ -18,7 +18,12 @@ function Header() {
   };
   return (
     <header className="header">
-      <h2>{"The Best Pizza In Schaumburg - Call Now: (847) 524-2204 | Ordering must be done over the phone or in store."}</h2>
+      <div className="mobile">
+        <h2>{"The Best Pizza In Schaumburg - Call Now: (847) 524-2204"}</h2>
+        <h2>{"|"}</h2>
+        <h2>{"Ordering must be done over the phone or in store."}</h2>
+      </div>
+
       <div className="toggle" id="toggle">
         <div className="icon light">
           <Image

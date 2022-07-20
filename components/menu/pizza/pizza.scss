@@ -28,7 +28,10 @@
     top: 0;
     h5 {
       margin: 0;
+      padding-bottom: .25rem;
+      padding-top: .5rem;
       font-size: 1rem;
+      border-bottom: solid 1px var(--textColor);
     }
     p {
       margin: 0.05rem;
@@ -61,7 +64,7 @@
     width: fit-content;
     position: absolute;
     right: 0;
-    bottom: 2px;
+    bottom: 0.5rem;
     padding: 0.25rem;
     margin-right: 0.5rem;
     background-color: var(--primaryColor);

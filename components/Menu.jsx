@@ -10,7 +10,6 @@ import Desserts from "./menu/Desserts";
 
 import { useState } from "react";
 
-
 function Menu() {
   const [selected, setSelected] = useState("test");
   const menuCategories = {
@@ -35,7 +34,7 @@ function Menu() {
   const select = (e) => {
     // const value = e.target.outerText;
     const value = e.target.attributes.value.value;
-    console.log(value)
+    console.log(value);
 
     setSelected(value);
   };
@@ -45,8 +44,13 @@ function Menu() {
         <h2>Menu</h2>
         <ul>
           {Object.keys(menuCategories).map((category) => {
-            return <li key={category} onClick={select} value={category}>{category}</li>;
+            return (
+              <li key={category} onClick={select} value={category}>
+                {category}
+              </li>
+            );
           })}
+          <div className="fade"></div>
         </ul>
       </nav>
       <div className="selected">{menuCategories[selected]}</div>
