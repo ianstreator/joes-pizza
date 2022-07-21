@@ -28,14 +28,13 @@ function BuildYourOwnPizza() {
   };
 
   useEffect(() => {
-    let costOfToppings;
-    let costOfCrust;
+    let costOfToppings = 0;
+    let costOfCrust = 0;
     if (crust) {
       costOfCrust =
         PizzaData.BuildYourOwnPizza.Crust[crust][
           Object.values(PizzaData.BuildYourOwnPizza.Size).indexOf(size)
         ];
-      setCost(Number(costOfCrust));
     }
     if (toppings.length) {
       const pricePerTopping =
@@ -43,8 +42,9 @@ function BuildYourOwnPizza() {
           PizzaData.BuildYourOwnPizza.Size.indexOf(size)
         ];
       costOfToppings = toppings.length * pricePerTopping;
-      setCost(costOfCrust + costOfToppings);
     }
+
+    setCost(costOfCrust + costOfToppings);
   }, [crust, toppings, size]);
 
   return (
