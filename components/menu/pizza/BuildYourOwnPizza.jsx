@@ -83,7 +83,13 @@ function BuildYourOwnPizza() {
       costOfToppings = toppings.length * pricePerTopping;
       setCost(costOfCrust + costOfToppings);
     }
-  }, [crust, toppings]);
+  }, [
+    crust,
+    toppings,
+    size,
+    buildYourOwnPizza.Toppings.Price.Full,
+    buildYourOwnPizza.Size,
+  ]);
   return (
     <div className="pizza">
       <div className="receipt">
@@ -95,7 +101,11 @@ function BuildYourOwnPizza() {
           <h5>Toppings</h5>
           <div className="toppings">
             {toppings.map((topping) => {
-              return <p className="topping">{topping}</p>;
+              return (
+                <p key={topping} className="topping">
+                  {topping}
+                </p>
+              );
             })}
           </div>
         </div>
@@ -113,9 +123,10 @@ function BuildYourOwnPizza() {
                   key={size}
                   className={"option"}
                   onClick={selectSize}
-                  children={size}
                   value={size}
-                />
+                >
+                  {size}
+                </Card>
               );
             })}
           </div>
@@ -132,9 +143,10 @@ function BuildYourOwnPizza() {
                     key={crust[0]}
                     className={"option null"}
                     onClick={null}
-                    children={crust[0]}
                     value={crustValue}
-                  />
+                  >
+                    {crust[0]}
+                  </Card>
                 );
               } else {
                 return (
@@ -142,9 +154,10 @@ function BuildYourOwnPizza() {
                     key={crust[0]}
                     className={"option"}
                     onClick={selectCrust}
-                    children={crust[0]}
                     value={crustValue}
-                  />
+                  >
+                    {crust[0]}
+                  </Card>
                 );
               }
             })}
@@ -167,9 +180,10 @@ function BuildYourOwnPizza() {
                               key={topping}
                               className={"option null"}
                               onClick={null}
-                              children={topping}
                               value={topping}
-                            />
+                            >
+                              {topping}
+                            </Card>
                           );
                         } else {
                           return (
@@ -177,9 +191,10 @@ function BuildYourOwnPizza() {
                               key={topping}
                               className={"option"}
                               onClick={selectTopping}
-                              children={topping}
                               value={topping}
-                            />
+                            >
+                              {topping}
+                            </Card>
                           );
                         }
                       })}

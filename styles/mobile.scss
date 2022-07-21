@@ -1,10 +1,4 @@
 @media only screen and (max-width: 1000px) {
-  * {
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
   html {
     font-size: 8px;
   }
@@ -82,7 +76,7 @@
       margin: 0;
       flex-direction: column;
       position: relative;
-      &:after {
+      &::after {
         content: "_______";
         display: block;
         height: 6rem;
@@ -117,9 +111,6 @@
         max-height: 6rem;
         z-index: 1;
         overflow-x: scroll;
-        &::-webkit-scrollbar {
-          display: none;
-        }
         ul {
           flex-direction: row;
           position: relative;
@@ -129,6 +120,13 @@
             font-size: 3rem;
             padding-left: 2rem;
             padding-right: 2rem;
+          }
+          &::after {
+            content: "___________________";
+            display: block;
+            width: 20rem;
+            height: 6rem;
+            color: rgba(0, 0, 0, 0);
           }
         }
         h2 {

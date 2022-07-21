@@ -27,7 +27,7 @@ function Pizza() {
         <button className="pizza_toggle" onClick={changeView}>
           {view}
         </button>
-        <h1>Our Specialty Pizza's</h1>
+        <h1>{`Our Specialty Pizza's`}</h1>
       </div>
     );
   }

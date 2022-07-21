@@ -14,16 +14,19 @@ export default function Home() {
   };
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
+    const onResize = () => {
       if (window.innerWidth < 1000) {
         setMobile(true);
       } else {
         setMobile(false);
       }
-    });
-    const width = screen.width > 1000 ? window.innerWidth : screen.width;
-    if (width < 1000) setMobile(true);
-  }, [mobile]);
+    };
+    window.addEventListener("resize", onResize);
+
+    onResize();
+
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   if (mobile) {
     return (
@@ -46,10 +49,9 @@ export default function Home() {
           <div className="main_content">
             <h1 className="title">{"Joe's Pizza"}</h1>
 
-            <Card
-              className={"menu_info"}
-              children={view === "Menu" ? <Information /> : <Menu />}
-            />
+            <Card className={"menu_info"}>
+              {view === "Menu" ? <Information /> : <Menu />}
+            </Card>
             <button className="view_btn" onClick={changeView}>
               {view}
             </button>

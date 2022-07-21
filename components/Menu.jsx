@@ -32,10 +32,7 @@ function Menu() {
     Desserts: <Desserts />,
   };
   const select = (e) => {
-    // const value = e.target.outerText;
     const value = e.target.attributes.value.value;
-    console.log(value);
-
     setSelected(value);
   };
   return (
@@ -50,7 +47,8 @@ function Menu() {
               </li>
             );
           })}
-          <div className="fade"></div>
+          {/* <li className="hide">___</li> */}
+          {/* <div className="fade"></div> */}
         </ul>
       </nav>
       <div className="selected">{menuCategories[selected]}</div>
