@@ -48,9 +48,9 @@ export default function Home() {
           <div className="main_content">
             <h1 className="title">{"Joe's Pizza"}</h1>
 
-            <Card className={"menu_info"}>
+            <div className={"menu_info"}>
               {view === "Menu" ? <Information /> : <Menu />}
-            </Card>
+            </div>
             <button className="view_btn" onClick={changeView}>
               {view}
             </button>

@@ -36,13 +36,13 @@ function BuildYourOwnPizza() {
     if (crust) {
       costOfCrust = crustData[crust][Object.values(sizeData).indexOf(size)];
     }
-    const toppingsList = Object.keys(toppings)
+    const toppingsList = Object.keys(toppings);
     if (toppingsList.length) {
       const pricePerTopping = toppingsData.Price.Full[sizeData.indexOf(size)];
       costOfToppings = toppingsList.length * pricePerTopping;
     }
     setCost(costOfCrust + costOfToppings);
-  }, [crust, toppings, size]);
+  }, [crust, toppings, size, crustData, sizeData, toppingsData.Price.Full]);
 
   return (
     <div className="pizza">
@@ -96,7 +96,11 @@ function BuildYourOwnPizza() {
               return (
                 <div
                   key={crustName}
-                  className={clsx("option", nullCheck && "null", crustName === crust && "chosen")}
+                  className={clsx(
+                    "option",
+                    nullCheck && "null",
+                    crustName === crust && "chosen"
+                  )}
                   onClick={onClick}
                 >
                   {crustName}
@@ -122,7 +126,11 @@ function BuildYourOwnPizza() {
                       return (
                         <div
                           key={topping}
-                          className={clsx("option", nullCheck && "null", toppings[topping] && "chosen")}
+                          className={clsx(
+                            "option",
+                            nullCheck && "null",
+                            toppings[topping] && "chosen"
+                          )}
                           onClick={onClick}
                         >
                           {topping}
