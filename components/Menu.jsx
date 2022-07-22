@@ -8,10 +8,21 @@ import Dinners from "./menu/Dinners";
 import Beverages from "./menu/Beverages";
 import Desserts from "./menu/Desserts";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Menu() {
-  const [selected, setSelected] = useState("test");
+  const [selected, setSelected] = useState("Pizza");
+  useEffect(() => {
+    const selectedElement = document.getElementById(`${selected}`);
+    const nonSelectedElements = document.getElementsByName("li");
+    console.log(nonSelectedElements);
+    // selectedElement.style.cssText = "background-color: white;";
+    console.log(selectedElement.classList);
+
+    selectedElement.classList.add("active");
+    console.log(selectedElement.classList);
+  });
+
   const menuCategories = {
     Pizza: <Pizza />,
 
@@ -42,13 +53,16 @@ function Menu() {
         <ul>
           {Object.keys(menuCategories).map((category) => {
             return (
-              <li key={category} onClick={select} value={category}>
+              <li
+                id={`${category}`}
+                key={category}
+                onClick={select}
+                value={category}
+              >
                 {category}
               </li>
             );
           })}
-          {/* <li className="hide">___</li> */}
-          {/* <div className="fade"></div> */}
         </ul>
       </nav>
       <div className="selected">{menuCategories[selected]}</div>

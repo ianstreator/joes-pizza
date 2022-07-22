@@ -1,6 +1,6 @@
 const PizzaData = {
   BuildYourOwnPizza: {
-    Size: ['10"', '12"', '14"', '16"', '18"'],
+    Size: [10, 12, 14, 16, 18],
     Crust: {
       "Thin or X-Thin": [10.0, 12.0, 14.0, 16.0, 18.0],
       "Sicilian Style Thick Crust": [12.0, 14.0, 16.0, 19.0, 20.0],

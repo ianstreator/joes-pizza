@@ -77,10 +77,10 @@
       flex-direction: column;
       position: relative;
       &::after {
-        content: "_______";
+        content: "";
         display: block;
         height: 6rem;
-        width: 60px;
+        width: 30px;
         color: rgba(0, 0, 0, 0);
         z-index: 2;
         pointer-events: none;
@@ -93,6 +93,7 @@
         right: 0;
         top: 0;
       }
+      
       .scroll_options {
         max-width: 90%;
       }
@@ -114,20 +115,21 @@
         ul {
           flex-direction: row;
           position: relative;
+          align-items: center;
           li {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
             font-size: 3rem;
+            height: 6rem;
             padding-left: 2rem;
             padding-right: 2rem;
           }
           &::after {
-            content: "___________________";
+            font-size: 6rem;
+            content: "_";
             display: block;
-            width: 20rem;
             height: 6rem;
             color: rgba(0, 0, 0, 0);
           }
+        
         }
         h2 {
           display: none;

@@ -1,95 +1,49 @@
 import { useState, useEffect } from "react";
 import PizzaData from "../../../data/PizzaData";
-import Card from "../../shared/Card";
+import clsx from "clsx";
 
 function BuildYourOwnPizza() {
   const [cost, setCost] = useState(0);
   const [size, setSize] = useState("");
   const [crust, setCrust] = useState("");
-  const [toppings, setToppings] = useState([]);
-  const buildYourOwnPizza = PizzaData.BuildYourOwnPizza;
-
-  const componentValue = (e, type) => {
-    if (typeof type === "string") {
-      return e.target.outerText;
-    } else if (typeof type === "number") {
-      return e.target.attributes.value.value;
-    }
-  };
-  //....highlight and un-highlight category items...
-  const highlightComponent = (e, multi) => {
-    if (!multi) {
-      Object.values(e.nativeEvent.path[1].children).forEach((e) => {
-        e.classList.remove("chosen");
-      });
-      e.target.classList.add("chosen");
-    } else {
-      if (e.target.classList.value.includes("chosen")) {
-        e.target.classList.remove("chosen");
-      } else {
-        e.target.classList.add("chosen");
-      }
-    }
-  };
+  const [toppings, setToppings] = useState({});
+  const sizeData = PizzaData.BuildYourOwnPizza.Size;
+  const crustData = PizzaData.BuildYourOwnPizza.Crust;
+  const toppingsData = PizzaData.BuildYourOwnPizza.Toppings;
 
   const selectSize = (e) => {
-    setCost(0);
-    setSize(componentValue(e, 1));
+    setSize(e);
     setCrust("");
-    setToppings([]);
-    const chosen = Object.values(document.getElementsByClassName("chosen"));
-    chosen.forEach((e) => e.classList.remove("chosen"));
-    highlightComponent(e, false);
+    setToppings({});
   };
   const selectCrust = (e) => {
-    highlightComponent(e, false);
-    setCrust(componentValue(e, ""));
+    setCrust(e);
   };
   const selectTopping = (e) => {
-    highlightComponent(e, true);
-    if (toppings.includes(componentValue(e, ""))) {
-      setToppings((curr) => [
-        ...curr.filter((topping) => topping !== componentValue(e, "")),
-      ]);
-    } else {
-      setToppings((curr) => [...curr, componentValue(e, "")]);
-    }
+    toppings[e] ? delete toppings[e] : (toppings[e] = true);
+    setToppings({ ...toppings });
   };
 
   const clearAllSelections = () => {
     setSize("");
     setCrust("");
-    setToppings([]);
-    setCost(0);
-    const chosen = Object.values(document.getElementsByClassName("chosen"));
-    chosen.forEach((e) => e.classList.remove("chosen"));
+    setToppings({});
   };
 
   useEffect(() => {
-    let costOfToppings;
-    let costOfCrust;
+    let costOfToppings = 0;
+    let costOfCrust = 0;
     if (crust) {
-      costOfCrust =
-        PizzaData.BuildYourOwnPizza.Crust[crust][
-          Object.values(buildYourOwnPizza.Size).indexOf(size)
-        ];
-      setCost(Number(costOfCrust));
+      costOfCrust = crustData[crust][Object.values(sizeData).indexOf(size)];
     }
-    if (toppings.length) {
-      const pricePerTopping =
-        buildYourOwnPizza.Toppings.Price.Full[
-          buildYourOwnPizza.Size.indexOf(size)
-        ];
-      costOfToppings = toppings.length * pricePerTopping;
-      setCost(costOfCrust + costOfToppings);
+    const toppingsList = Object.keys(toppings)
+    if (toppingsList.length) {
+      const pricePerTopping = toppingsData.Price.Full[sizeData.indexOf(size)];
+      costOfToppings = toppingsList.length * pricePerTopping;
     }
-  }, [
-    crust,
-    toppings,
-    size,
-    buildYourOwnPizza.Toppings.Price.Full,
-    buildYourOwnPizza.Size,
-  ]);
+    setCost(costOfCrust + costOfToppings);
+  }, [crust, toppings, size]);
+
   return (
     <div className="pizza">
       <div className="receipt">
@@ -100,7 +54,7 @@ function BuildYourOwnPizza() {
         <div className="toppings_container">
           <h5>Toppings</h5>
           <div className="toppings">
-            {toppings.map((topping) => {
+            {Object.keys(toppings).map((topping) => {
               return (
                 <p key={topping} className="topping">
                   {topping}
@@ -117,16 +71,16 @@ function BuildYourOwnPizza() {
         <div className="container row">
           <h2 className="section">Size</h2>
           <div className="options">
-            {Object.values(buildYourOwnPizza.Size).map((size) => {
+            {Object.values(sizeData).map((s) => {
               return (
-                <Card
-                  key={size}
-                  className={"option"}
-                  onClick={selectSize}
-                  value={size}
+                <div
+                  key={s}
+                  className={clsx("option", s === size && "chosen")}
+                  onClick={() => selectSize(s)}
+                  value={s}
                 >
-                  {size}
-                </Card>
+                  {s}
+                </div>
               );
             })}
           </div>
@@ -134,75 +88,51 @@ function BuildYourOwnPizza() {
         <div className="container row">
           <h2 className="section">Crust</h2>
           <div className={`options`}>
-            {Object.entries(buildYourOwnPizza.Crust).map((crust) => {
+            {Object.entries(crustData).map(([crustName, crustValues]) => {
               const crustValue =
-                crust[1][Object.values(buildYourOwnPizza.Size).indexOf(size)];
-              if (crustValue === null || size === "") {
-                return (
-                  <Card
-                    key={crust[0]}
-                    className={"option null"}
-                    onClick={null}
-                    value={crustValue}
-                  >
-                    {crust[0]}
-                  </Card>
-                );
-              } else {
-                return (
-                  <Card
-                    key={crust[0]}
-                    className={"option"}
-                    onClick={selectCrust}
-                    value={crustValue}
-                  >
-                    {crust[0]}
-                  </Card>
-                );
-              }
+                crustValues[Object.values(sizeData).indexOf(size)];
+              const nullCheck = crustValue === null || size === "";
+              const onClick = nullCheck ? null : () => selectCrust(crustName);
+              return (
+                <div
+                  key={crustName}
+                  className={clsx("option", nullCheck && "null", crustName === crust && "chosen")}
+                  onClick={onClick}
+                >
+                  {crustName}
+                </div>
+              );
             })}
           </div>
         </div>
         <div className="container row">
           <h2 className="section">Toppings</h2>
           <div className="options toppings">
-            {Object.entries(buildYourOwnPizza.Toppings.Types).map(
-              (topping_category) => {
-                return (
-                  <>
-                    <h3 key={Math.random()}> {topping_category[0]}</h3>
+            {Object.entries(toppingsData.Types).map(([category, topping]) => {
+              return (
+                <>
+                  <h3 key={Math.random()}> {category}</h3>
 
-                    <div key={topping_category} className="topping_category">
-                      {topping_category[1].map((topping) => {
-                        if (crust === "") {
-                          return (
-                            <Card
-                              key={topping}
-                              className={"option null"}
-                              onClick={null}
-                              value={topping}
-                            >
-                              {topping}
-                            </Card>
-                          );
-                        } else {
-                          return (
-                            <Card
-                              key={topping}
-                              className={"option"}
-                              onClick={selectTopping}
-                              value={topping}
-                            >
-                              {topping}
-                            </Card>
-                          );
-                        }
-                      })}
-                    </div>
-                  </>
-                );
-              }
-            )}
+                  <div key={category} className="topping_category">
+                    {topping.map((topping) => {
+                      const nullCheck = crust === "";
+                      const onClick = nullCheck
+                        ? null
+                        : () => selectTopping(`${topping}`);
+                      return (
+                        <div
+                          key={topping}
+                          className={clsx("option", nullCheck && "null", toppings[topping] && "chosen")}
+                          onClick={onClick}
+                        >
+                          {topping}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </>
+              );
+            })}
           </div>
         </div>
       </div>
