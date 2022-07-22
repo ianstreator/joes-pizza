@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Information from "../components/Information";
 import Menu from "../components/Menu";
-import Card from "../components/shared/Card";
 
 export default function Home() {
   const [mobile, setMobile] = useState(false);
