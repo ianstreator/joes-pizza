@@ -1,6 +1,7 @@
 @media only screen and (max-width: 1000px) {
   html {
     font-size: 8px;
+    height: -webkit-fill-available;
   }
 
   .app {
@@ -15,8 +16,24 @@
     padding: 1.5rem;
     .mobile {
       flex-direction: column;
-      h2 {
+      height: 6rem;
+      justify-content: space-between;
+      p {
         margin: 0;
+        font-weight: bolder;
+        font-size: 1.5rem;
+        &.mobile_hide {
+          color: rgba(0, 0, 0, 0);
+        }
+      }
+    }
+    .toggle {
+      transform: rotateZ(90deg);
+      width: 6rem;
+      .icon {
+        &.dark {
+          transform: translateX(200%) rotate(-90deg);
+        }
       }
     }
   }
@@ -29,13 +46,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 28rem;
+    justify-content: space-evenly;
+    height: 100vh;
+    margin-top: 8rem;
     .title {
       color: var(--textColor);
       font-family: Italianno;
-      font-size: 100px;
+      font-size: 80px;
       font-weight: lighter;
-      margin-bottom: 4rem;
+      margin: 0;
       padding-left: 3rem;
     }
     .title_info {
@@ -93,7 +112,7 @@
         right: 0;
         top: 0;
       }
-      
+
       .scroll_options {
         max-width: 90%;
       }
@@ -129,7 +148,6 @@
             height: 6rem;
             color: rgba(0, 0, 0, 0);
           }
-        
         }
         h2 {
           display: none;
@@ -147,7 +165,6 @@
         }
       }
     }
-    
   }
   .view_btn {
     width: 90%;
@@ -155,8 +172,7 @@
     background-color: var(--secondaryColor);
     color: white;
     font-size: 3rem;
-    position: absolute;
-    bottom: 5rem;
+    position: relative;
     border: none;
     border-radius: 1rem;
     &:hover {

@@ -15,6 +15,7 @@
   --flagColorOne: var(--secondaryColor);
   --flagColorTwo: var(--secondaryColor);
   --flagColorThree: var(--secondaryColor);
+  --themeIcon: url("../public/light.svg");
 }
 
 .dark {
@@ -25,6 +26,7 @@
   --flagColorOne: hsl(108, 70%, 80%);
   --flagColorTwo: hsl(0, 0%, 90%);
   --flagColorThree: hsl(14, 70%, 80%);
+  --themeIcon: url("../public/dark.svg");
 }
 
 .main {
@@ -49,30 +51,35 @@
   padding-right: 2rem;
   .mobile {
     display: flex;
-    h2 {
+    p {
       margin-left: .25rem;
+      .mobile_hide {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
     }
   }
   .toggle {
     display: flex;
     justify-content: space-between;
-    width: 6rem;
+    width: 4rem;
     border-radius: 25px;
     padding: 0.25rem;
     background-color: var(--backgroundColor);
-    transition: 500ms;
-
+    transition: 400ms;
+    cursor: pointer;
     .icon {
       background-color: var(--secondaryColor);
+      background-image: var(--themeIcon);
+      background-size: 75%;
+      background-repeat: no-repeat;
+      background-position: center;
       border-radius: 50%;
-      width: 2.5rem;
-      height: 2.5rem;
-      padding: 0.25rem;
-      transition: 100ms;
-      cursor: pointer;
+      width: 1.75rem;
+      height: 1.75rem;
+      transition: 400ms;
       &.dark {
-        opacity: 0;
-        z-index: -1;
+        transform: translateX(100%);
       }
     }
   }
@@ -244,3 +251,6 @@
   // background-color: rgba(0, 0, 0, 0);
 }
 
+button {
+  cursor: pointer;
+}
