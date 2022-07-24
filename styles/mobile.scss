@@ -40,7 +40,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 100vh;
+    height: fit-content;
+    max-height: fit-content;
     margin-top: 0;
     .title {
       color: var(--textColor);
