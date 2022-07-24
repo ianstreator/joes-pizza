@@ -13,7 +13,7 @@
   .header {
     position: relative;
     padding: 0;
-    height: 10rem;
+    height: 8rem;
     .header_content {
       flex-direction: column;
       p {
@@ -46,7 +46,7 @@
     .title {
       color: var(--textColor);
       font-family: Italianno;
-      font-size: 70px;
+      font-size: 60px;
       font-weight: lighter;
       margin: 0;
       padding-left: 3rem;
@@ -116,7 +116,7 @@
           font-weight: bold;
         }
         .options {
-          width: 100%;
+          width: 90%;
           .option {
             min-width: 4rem;
             max-width: 18rem;
@@ -128,7 +128,7 @@
         }
       }
       .receipt {
-        width: 19rem;
+        width: 22rem;
         min-height: 50rem;
         max-height: 50rem;
         overflow-y: hidden;
@@ -187,7 +187,7 @@
         overflow-y: scroll;
         max-height: 100%;
         .clear_all {
-          font-size: 2rem;
+          font-size: 1.75rem;
           margin-right: .5rem;
         }
       }
