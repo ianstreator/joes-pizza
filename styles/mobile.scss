@@ -11,30 +11,25 @@
     width: 100%;
   }
   .header {
-    position: absolute;
-    top: 0;
-    padding: 1.5rem;
-    .mobile {
+    position: relative;
+    padding: 0;
+    height: 8rem;
+    .header_content {
       flex-direction: column;
-      height: fit-content;
-      justify-content: space-between;
+      height: 100%;
+      justify-content: space-evenly;
       p {
         margin: 0;
         font-weight: bolder;
         font-size: 1.5rem;
-        &.mobile_hide {
-          color: rgba(0, 0, 0, 0);
-        }
+        margin: 1rem;
       }
     }
     .toggle {
-      width: 6rem;
-      transform: rotateZ(90deg);
-      .icon {
-        &.dark {
-          transform: translateX(205%);
-        }
-      }
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 1rem;
     }
   }
   .menu_info {
@@ -48,7 +43,7 @@
     align-items: center;
     justify-content: space-evenly;
     height: 100vh;
-    margin-top: 12rem;
+    margin-top: 0;
     margin-bottom: 6rem;
     .title {
       color: var(--textColor);
@@ -135,7 +130,7 @@
         }
       }
       .receipt {
-        width: 22rem;
+        width: 19rem;
         min-height: 50rem;
         max-height: 50rem;
         overflow-y: hidden;
@@ -195,6 +190,7 @@
         max-height: 100%;
         .clear_all {
           font-size: 2rem;
+          margin-right: .5rem;
         }
       }
     }
@@ -202,7 +198,7 @@
   .view_btn {
     width: 90%;
     padding: 2rem;
-    margin-top: 10rem;
+    margin-top: 2rem;
     background-color: var(--secondaryColor);
     color: white;
     font-size: 3rem;

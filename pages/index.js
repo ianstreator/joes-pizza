@@ -52,9 +52,9 @@ export default function Home() {
       </Head>
       <main className={clsx("main", theme && "dark")} id="theme">
         <header className="header">
-          <div className="mobile">
+          <div className="header_content">
             <p>{"The Best Pizza In Schaumburg - Call Now: (847) 524-2204"}</p>
-            <p className="mobile_hide">{"|"}</p>
+            {!isMobile && <p>|</p>}
             <p>{"Ordering must be done over the phone or in store."}</p>
           </div>
 

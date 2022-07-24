@@ -65,10 +65,12 @@ function BuildYourOwnPizza() {
             })}
           </div>
         </div>
-        <h1 className="cost">{`$${cost.toFixed(2)}`}</h1>
-        <button className="clear_all" onClick={clearAllSelections}>
-          <h1>CLEAR</h1>
-        </button>
+        <div>
+          <h1 className="cost">{`$${cost.toFixed(2)}`}</h1>
+          <p className="clear_all" onClick={clearAllSelections}>
+            RESET
+          </p>
+        </div>
       </div>
       <div className="scroll_options">
         <div className="container row">

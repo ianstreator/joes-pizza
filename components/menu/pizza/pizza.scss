@@ -70,19 +70,14 @@
     position: absolute;
     right: 0;
     bottom: 0.5rem;
-    margin-right: 0.5rem;
+    margin-right: 2rem;
     background-color: var(--backgroundColor);
     color: var(--textColor);
     border-style: none;
-    text-decoration: underline;
     cursor: pointer;
-    h1 {
-      font-weight: lighter;
-      font-size: 1.5rem;
-    }
   }
   .scroll_options {
-    width: 100%;
+    width: 80%;
     height: 100%;
     overflow-y: scroll;
     &::-webkit-scrollbar {
