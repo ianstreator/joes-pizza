@@ -3,7 +3,6 @@
     font-size: 7px;
     height: -webkit-fill-available;
   }
-
   .app {
     justify-content: center;
     align-items: center;
@@ -13,13 +12,13 @@
   .header {
     position: relative;
     padding: 0;
-    height: 8rem;
+    height: fit-content;
     .header_content {
       flex-direction: column;
       p {
         margin: 0;
         font-weight: bolder;
-        font-size: 1.75rem;
+        font-size: 2rem;
         margin: 1rem;
       }
     }
@@ -137,10 +136,10 @@
           max-height: 33rem;
         }
         h5 {
-          font-size: 1.5rem;
+          font-size: 2rem;
         }
         p {
-          font-size: 1.5rem;
+          font-size: 1.7rem;
         }
         .title {
           margin: 0;
@@ -188,7 +187,7 @@
         max-height: 100%;
         .clear_all {
           font-size: 1.75rem;
-          margin-right: .5rem;
+          margin-right: 0.5rem;
         }
       }
     }

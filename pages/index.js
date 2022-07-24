@@ -53,13 +53,16 @@ export default function Home() {
       <main className={clsx("main", theme && "dark")} id="theme">
         <header className="header">
           <div className="header_content">
-            <p>{"The Best Pizza In Schaumburg - Call Now: (847) 524-2204"}</p>
-            {!isMobile && <p>|</p>}
+            {/* <p>{"The Best Pizza In Schaumburg - Call Now: (847) 524-2204"}</p>
+            {!isMobile && <p>|</p>} */}
             <p>{"Ordering must be done over the phone or in store."}</p>
-          </div>
-
-          <div className="toggle" id="toggle" onClick={() => setTheme(!theme)}>
-            <div className={clsx("icon", theme && "dark")}></div>
+            <div
+              className="toggle"
+              id="toggle"
+              onClick={() => setTheme(!theme)}
+            >
+              <div className={clsx("icon", theme && "dark")}></div>
+            </div>
           </div>
         </header>
         <div className="main_content">{content}</div>
