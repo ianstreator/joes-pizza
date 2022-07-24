@@ -8,6 +8,7 @@ import Dinners from "./menu/Dinners";
 import Beverages from "./menu/Beverages";
 import Desserts from "./menu/Desserts";
 
+import clsx from "clsx"
 import { useState } from "react";
 
 function Menu() {
@@ -32,10 +33,6 @@ function Menu() {
 
     Desserts: <Desserts />,
   };
-  const select = (e) => {
-    const value = e.target.attributes.value.value;
-    setSelected(value);
-  };
   return (
     <div className="menu">
       <nav className="nav">
@@ -46,8 +43,8 @@ function Menu() {
               <li
                 id={`${category}`}
                 key={category}
-                onClick={select}
-                value={category}
+                onClick={() => setSelected(category)}
+                className={clsx(category === selected && "active")}
               >
                 {category}
               </li>

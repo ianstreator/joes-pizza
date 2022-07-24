@@ -12,12 +12,12 @@
   }
   .receipt {
     padding: 1rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: .5rem;
     padding-top: 0;
     margin-left: auto;
     margin-right: 0.5rem;
     height: fit-content;
-    min-height: 35rem;
+    min-height: 39rem;
     width: 14rem;
     background-color: var(--backgroundColor);
     color: var(--textColor);
@@ -48,14 +48,19 @@
       .toppings {
         display: flex;
         flex-direction: column;
+        overflow-y: scroll;
       }
     }
     .cost {
+      background-color: var(--backgroundColor);
       position: absolute;
       bottom: 0;
       left: 0;
-      margin-left: 0.5rem;
       font-weight: lighter;
+      border-top: solid 1px var(--textColor);
+      width: 100%;
+      padding: .5rem;
+      padding-top: 0;
     }
   }
 
@@ -65,19 +70,15 @@
     position: absolute;
     right: 0;
     bottom: 0.5rem;
-    padding: 0.25rem;
     margin-right: 0.5rem;
-    background-color: var(--primaryColor);
+    background-color: var(--backgroundColor);
     color: var(--textColor);
-    border-color: var(--hoverColor);
-    border-radius: 4px;
-    border-width: 1px;
-    border-style: solid;
-    font-size: 18px;
+    border-style: none;
+    text-decoration: underline;
     cursor: pointer;
-    transition: 200ms;
-    &:hover {
-      background-color: var(--hoverColor);
+    h1 {
+      font-weight: lighter;
+      font-size: 1.5rem;
     }
   }
   .scroll_options {
@@ -95,6 +96,7 @@
       width: 90%;
       .section {
         margin-right: auto;
+        margin-bottom: 1rem;
       }
       .options {
         width: 75%;
@@ -152,7 +154,7 @@
         flex-direction: column;
         padding-bottom: 100px;
         h3 {
-          margin-top: 0;
+          margin-bottom: .5rem;
         }
         .topping_category {
           display: flex;

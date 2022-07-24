@@ -248,9 +248,12 @@
 .hide {
   display: none;
   color: rgba(0, 0, 0, 0);
-  // background-color: rgba(0, 0, 0, 0);
 }
 
 button {
   cursor: pointer;
+}
+.active {
+  background-color: var(--primaryColor);
+  color: var(--textColor);
 }

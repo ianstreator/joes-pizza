@@ -50,7 +50,9 @@ function BuildYourOwnPizza() {
         <h1 className="title">{"Joe's Pizza"}</h1>
 
         <h5>{`Size & Crust`}</h5>
-        <p>{`${size} ${crust}`}</p>
+        <p>{`${size && size + '"'}`}</p>
+        <p>{`${crust}`}</p>
+
         <div className="toppings_container">
           <h5>Toppings</h5>
           <div className="toppings">
@@ -63,10 +65,11 @@ function BuildYourOwnPizza() {
             })}
           </div>
         </div>
-
         <h1 className="cost">{`$${cost.toFixed(2)}`}</h1>
+        <button className="clear_all" onClick={clearAllSelections}>
+          <h1>CLEAR</h1>
+        </button>
       </div>
-
       <div className="scroll_options">
         <div className="container row">
           <h2 className="section">Size</h2>
@@ -79,7 +82,7 @@ function BuildYourOwnPizza() {
                   onClick={() => selectSize(s)}
                   value={s}
                 >
-                  {s}
+                  {`${s}"`}
                 </div>
               );
             })}
@@ -144,10 +147,6 @@ function BuildYourOwnPizza() {
           </div>
         </div>
       </div>
-
-      <button className="clear_all" onClick={clearAllSelections}>
-        Clear
-      </button>
     </div>
   );
 }
