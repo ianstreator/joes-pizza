@@ -47,16 +47,12 @@
   background-color: var(--secondaryColor);
   color: white;
   width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  .mobile {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  .header_content {
     display: flex;
     p {
       margin-left: .25rem;
-      .mobile_hide {
-        margin-left: 1rem;
-        margin-right: 1rem;
-      }
     }
   }
   .toggle {

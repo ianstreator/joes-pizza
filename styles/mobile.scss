@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1000px) {
   html {
-    font-size: 8px;
+    font-size: 7px;
     height: -webkit-fill-available;
   }
 
@@ -16,12 +16,10 @@
     height: 8rem;
     .header_content {
       flex-direction: column;
-      height: 100%;
-      justify-content: space-evenly;
       p {
         margin: 0;
         font-weight: bolder;
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         margin: 1rem;
       }
     }
@@ -48,7 +46,7 @@
     .title {
       color: var(--textColor);
       font-family: Italianno;
-      font-size: 80px;
+      font-size: 70px;
       font-weight: lighter;
       margin: 0;
       padding-left: 3rem;
