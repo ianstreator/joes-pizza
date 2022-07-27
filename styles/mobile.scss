@@ -11,22 +11,15 @@
   }
   .header {
     position: relative;
-    padding: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     height: fit-content;
     .header_content {
-      flex-direction: column;
       p {
-        margin: 0;
-        font-weight: bolder;
+        margin: unset;
+        font-weight: 600;
         font-size: 2rem;
-        margin: 1rem;
       }
-    }
-    .toggle {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      margin: 1rem;
     }
   }
   .menu_info {
@@ -194,7 +187,7 @@
   }
   .view_btn {
     width: 90%;
-    padding: 2rem;
+    padding: 1rem;
     margin-top: 2rem;
     background-color: var(--secondaryColor);
     color: white;

@@ -65,10 +65,10 @@ function BuildYourOwnPizza() {
             })}
           </div>
         </div>
-        <div>
+        <div className="receipt_bottom">
           <h1 className="cost">{`$${cost.toFixed(2)}`}</h1>
-          <p className="clear_all" onClick={clearAllSelections}>
-            RESET
+          <p className="clear" onClick={clearAllSelections}>
+            CLEAR
           </p>
         </div>
       </div>
