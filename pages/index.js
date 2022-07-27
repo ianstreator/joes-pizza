@@ -8,7 +8,7 @@ import Information from "../components/Information";
 import Menu from "../components/Menu";
 
 export default function Home() {
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState(true);
   const [view, setView] = useState("Menu");
   const changeView = () => {
     view === "Info" ? setView("Menu") : setView("Info");
