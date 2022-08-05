@@ -9,6 +9,8 @@
   --secondaryColor: hsl(212, 28%, 40%);
   --backgroundColor: hsl(43, 19%, 93%);
   --textColor: black;
+  --buttonColor: hsl(212, 65%, 30%);
+  --hoverButtonColor: hsl(212, 50%, 50%);
   --hoverColor: hsl(212, 40%, 60%);
   --selectedColor: hsl(212, 35%, 65%);
   --backgroundImage: url("../public/light-background.svg");
@@ -59,15 +61,16 @@
     }
   }
   .toggle {
+    background-color: var(--backgroundColor);
     display: flex;
-    justify-content: space-between;
-    width: 4rem;
-    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
     border-radius: 25px;
-    padding: 0.25rem;
+    padding: 0.5rem;
     margin: auto;
     margin-right: unset;
-    background-color: var(--backgroundColor);
     transition: 400ms;
     cursor: pointer;
     .icon {
@@ -77,12 +80,8 @@
       background-repeat: no-repeat;
       background-position: center;
       border-radius: 50%;
-      width: 1.75rem;
-      height: 1.75rem;
-      transition: 400ms;
-      &.dark {
-        transform: translateX(100%);
-      }
+      width: 2rem;
+      height: 2rem;
     }
   }
 }

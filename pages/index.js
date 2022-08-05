@@ -67,7 +67,7 @@ export default function Home() {
               id="toggle"
               onClick={() => setTheme(!theme)}
             >
-              <div className={clsx("icon", theme && "dark")}></div>
+              <div className={clsx("icon", theme && "dark")} onClick={() => setTheme(!theme)}></div>
             </div>
           </div>
         </header>

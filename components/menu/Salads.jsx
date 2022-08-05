@@ -1,6 +1,6 @@
 function Salads() {
   return (
-    <div>Salads</div>
+    <h1>Salads</h1>
   )
 }
 

@@ -1,6 +1,6 @@
 function Burgers() {
   return (
-    <div>Burgers</div>
+    <h1>Burgers</h1>
   )
 }
 

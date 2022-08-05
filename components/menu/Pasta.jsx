@@ -1,6 +1,6 @@
 function Pasta() {
   return (
-    <div>Pastas</div>
+    <h1>Pastas</h1>
   )
 }
 

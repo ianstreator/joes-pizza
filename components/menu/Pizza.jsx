@@ -2,15 +2,18 @@ import { useState } from "react";
 import BuildYourOwnPizza from "./pizza/BuildYourOwnPizza";
 
 function Pizza() {
-  const [view, setView] = useState("Our Specialty Pizza's");
+  const  specialView = "View Our Specialty Pizza's"
+  const  byopView = "Build Your Own Pizza"
+
+  const [view, setView] = useState(specialView);
   const changeView = () => {
-    if (view === "Build Your Own Pizza") {
-      setView("Our Specialty Pizza's");
+    if (view === byopView) {
+      setView(specialView);
     } else {
-      setView("Build Your Own Pizza");
+      setView(byopView);
     }
   };
-  if (view === "Our Specialty Pizza's") {
+  if (view === specialView) {
     return (
       <div className="pizza">
         <button className="pizza_toggle" onClick={changeView}>

@@ -14,10 +14,20 @@
     padding-bottom: 1.5rem;
     height: fit-content;
     .header_content {
+      .toggle {
+        width: 4rem;
+        height: 4rem;
+        .icon {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
       p {
         margin: unset;
         font-weight: 600;
         font-size: 2rem;
+        display: flex;
+        align-items: center;
       }
     }
   }
@@ -65,7 +75,7 @@
           font-size: 3.5rem;
         }
         .row {
-          align-items: center;
+          align-items: baseline;
           .data {
             font-size: 2rem;
           }
@@ -188,14 +198,14 @@
     width: 90%;
     padding: 1rem;
     margin-top: 2rem;
-    background-color: var(--secondaryColor);
+    background-color: var(--buttonColor);
     color: white;
     font-size: 3rem;
     position: relative;
     border: none;
     border-radius: 1rem;
     &:hover {
-      background-color: var(--hoverColor);
+      background-color: var(--hoverButtonColor);
     }
   }
 }

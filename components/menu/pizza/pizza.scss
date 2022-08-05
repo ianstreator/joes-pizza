@@ -178,7 +178,7 @@
 }
 
 .pizza_toggle {
-  background-color: var(--secondaryColor);
+  background-color: var(--buttonColor);
   color: white;
   padding: 1rem;
   font-size: 2rem;
@@ -188,6 +188,6 @@
   cursor: pointer;
   transition: 200ms;
   &:hover {
-    background-color: var(--hoverColor);
+    background-color: var(--hoverButtonColor);
   }
 }
