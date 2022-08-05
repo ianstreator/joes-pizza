@@ -59,6 +59,9 @@
     p {
       margin-left: 0.25rem;
     }
+    a {
+      text-decoration: underline;
+    }
   }
   .toggle {
     background-color: var(--backgroundColor);
@@ -76,7 +79,7 @@
     .icon {
       background-color: var(--secondaryColor);
       background-image: var(--themeIcon);
-      background-size: 75%;
+      background-size: 70%;
       background-repeat: no-repeat;
       background-position: center;
       border-radius: 50%;
@@ -124,12 +127,18 @@
         color: var(--flagColorOne);
         .data {
           margin-left: 0.5rem;
+          height: fit-content;
+          margin-top: auto;
+          text-decoration: underline;
         }
       }
       .colorTwo {
         color: var(--flagColorTwo);
         .data {
           margin-left: 0.5rem;
+          height: fit-content;
+          margin-top: auto;
+          text-decoration: underline;
         }
       }
       .colorThree {

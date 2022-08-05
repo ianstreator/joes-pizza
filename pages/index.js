@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 
 import clsx from "clsx";
 import { useState } from "react";
@@ -10,6 +11,7 @@ import Menu from "../components/Menu";
 export default function Home() {
   const [theme, setTheme] = useState(true);
   const [view, setView] = useState("Menu");
+  const imageSize = 50;
   const changeView = () => {
     view === "Info" ? setView("Menu") : setView("Info");
   };
@@ -25,6 +27,24 @@ export default function Home() {
       <>
         <h1 key={"title"} className="title">
           {"Joe's Pizza"}
+          <a Href="tel:847-524-2204">
+            <Image
+              src={"/phone-icon.svg"}
+              width={imageSize}
+              height={imageSize}
+            ></Image>
+          </a>
+          <a
+            target="blank"
+            rel="no-referrer"
+            href="https://maps.google.com/?q=530 W Wise Rd, Schaumburg, IL 60193"
+          >
+            <Image
+              src={"/map-icon.svg"}
+              width={imageSize}
+              height={imageSize}
+            ></Image>
+          </a>
         </h1>
         <div key={"view"} className={"menu_info"}>
           {view === "Menu" ? <Information /> : <Menu />}
@@ -56,7 +76,10 @@ export default function Home() {
             {!isMobile && (
               <>
                 <p>
-                  {"The Best Pizza In Schaumburg - Call Now: (847) 524-2204"}
+                  {"The Best Pizza In Schaumburg - Call Now: "}
+                  <a className="data" Href="tel:847-524-2204">
+                    {"(847) 524-2204"}
+                  </a>
                 </p>
                 <p>|</p>
               </>
@@ -67,7 +90,10 @@ export default function Home() {
               id="toggle"
               onClick={() => setTheme(!theme)}
             >
-              <div className={clsx("icon", theme && "dark")} onClick={() => setTheme(!theme)}></div>
+              <div
+                className={clsx("icon", theme && "dark")}
+                onClick={() => setTheme(!theme)}
+              ></div>
             </div>
           </div>
         </header>
