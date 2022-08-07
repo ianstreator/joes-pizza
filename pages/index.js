@@ -27,7 +27,7 @@ export default function Home() {
       <>
         <h1 key={"title"} className="title">
           {"Joe's Pizza"}
-          <a Href="tel:847-524-2204">
+          <a href="tel:847-524-2204">
             <Image
               src={"/phone-icon.svg"}
               width={imageSize}
@@ -77,7 +77,7 @@ export default function Home() {
               <>
                 <p>
                   {"The Best Pizza In Schaumburg - Call Now: "}
-                  <a className="data" Href="tel:847-524-2204">
+                  <a className="data" href="tel:847-524-2204">
                     {"(847) 524-2204"}
                   </a>
                 </p>

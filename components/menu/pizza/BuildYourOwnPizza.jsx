@@ -79,7 +79,7 @@ function BuildYourOwnPizza() {
             {Object.values(sizeData).map((s) => {
               return (
                 <div
-                  key={s}
+                  key={s.toString()}
                   className={clsx("option", s === size && "chosen")}
                   onClick={() => selectSize(s)}
                   value={s}
@@ -119,10 +119,9 @@ function BuildYourOwnPizza() {
           <div className="options toppings">
             {Object.entries(toppingsData.Types).map(([category, topping]) => {
               return (
-                <>
-                  <h3 key={Math.random()}> {category}</h3>
-
-                  <div key={category} className="topping_category">
+                <div key={category}>
+                  <h3> {category}</h3>
+                  <div className="topping_category">
                     {topping.map((topping) => {
                       const nullCheck = crust === "";
                       const onClick = nullCheck
@@ -143,7 +142,7 @@ function BuildYourOwnPizza() {
                       );
                     })}
                   </div>
-                </>
+                </div>
               );
             })}
           </div>

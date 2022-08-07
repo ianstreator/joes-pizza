@@ -14,14 +14,14 @@ function Information() {
           <h3 className="section">Phone</h3>
           <div className="row">
             <p className="type">Ordering:</p>
-            <a className="data" Href="tel:847-524-2204">
+            <a className="data" href="tel:847-524-2204">
               {"(847) 524-2204"}
             </a>
           </div>
           <div>
             <div className="row">
               <p className="type">Catering:</p>
-              <a className="data" Href="tel:847-767-5637">
+              <a className="data" href="tel:847-767-5637">
                 {"(847) 767-5637"}
               </a>
             </div>

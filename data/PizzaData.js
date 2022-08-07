@@ -46,43 +46,76 @@ const PizzaData = {
   },
 
   SpecialtyPizza: {
-    Size: ['12"', '14"', '16"', '18"'],
-    Cost: [16.0, 20.0, 23.0, 26.0],
-    Pizza: {
-      "Joe's Fabulous Four":
+    Size_Cost: [
+      [12, 16],
+      [14, 20],
+      [16, 23],
+      [18, 26],
+    ],
+    Pizza: [
+      [
+        "Joe's Fabulous Four",
         "A classic pizza featuring savory Italian sausage, fresh mushrooms, onions and green peppers.",
-      "Joe's Vegetarian Supreme":
+      ],
+      [
+        "Joe's Vegetarian Supreme",
         "Piled high with garden-fresh mushrooms, onions, green peppers, and sliced tomatoes.",
-      "Joe's Vegetarian Delight":
+      ],
+      [
+        "Joe's Vegetarian Delight",
         "Joe's combination of spinach, mushrooms, black olives, and sliced tomatoes will make this an instant favorite of any veggie lover.",
-      "Joe's BBQ Pizza":
+      ],
+      [
+        "Joe's BBQ Pizza",
         "Sausage, crispy, bacon, and onions with Joe's zesty BBQ Sauce.",
-      "Honolulu Joe's":
+      ],
+      [
+        "Honolulu Joe's",
         "A delightful tropical twist of Canadian bacon and sweet onions.",
-      "Meaty Joe's":
+      ],
+      [
+        "Meaty Joe's",
         "A mighty, meaty combination of pepperoni, sausage, ground beef, bacon, and canadian bacon.",
-      "Mama's White Pizza":
+      ],
+      [
+        "Mama's White Pizza",
         "Juicy grilled chicken and fresh spinach on Mama's homemade alfredo sauce.",
-      "Mama's Spicy White Pizza":
+      ],
+      [
+        "Mama's Spicy White Pizza",
         "Juicy grilled cajun chicken and fresh spinach on Mama's homemade alfredo sauce.",
-      "Joe's Cheezy Beef Pizza":
+      ],
+      [
+        "Joe's Cheezy Beef Pizza",
         "Our Italian beef, sweet peppers, and mozzarella with garlic butter sauce.",
-      "Superbowl Pizza":
+      ],
+      [
+        "Superbowl Pizza",
         "Blackened Chicken, Buffalo Sauce, Crumbled Blue Cheese and Mozzarella.",
-      "Mama's Meatball Pizza": "With Hot or Sweet Peppers.",
-      "Chef Special Pizza":
+      ],
+      ["Mama's Meatball Pizza", "With Hot or Sweet Peppers."],
+      [
+        "Chef Special Pizza",
         "Roasted Whole Garlic and Butter Bottom, Artichoke, Mushroom and Spinach.",
-      "Pesto Grilled Chicken Pizza":
+      ],
+      [
+        "Pesto Grilled Chicken Pizza",
         "Pesto & Grilled Chicken is the perfect answer to your pizza craving.",
+      ],
+    ],
+    Other: {
+      Cost: 10.5,
+      Types: [
+        {
+          Calzone:
+            "A pocket of dough generously filled with our homemade marinara and plenty of mozzarella. Baked until golden brown and delicious.",
+        },
+        {
+          Panzerotti:
+            "Mozzarella and zesty marinara are stuffed into a dough pocket and deep fried for tasty satisfaction.",
+        },
+      ],
     },
-    Calzone: [
-      10.5,
-      "A pocket of dough generously filled with our homemade marinara and plenty of mozzarella. Baked until golden brown and delicious.",
-    ],
-    Panzerotti: [
-      10.5,
-      "Mozzarella and zesty marinara are stuffed into a dough pocket and deep fried for tasty satisfaction.",
-    ],
   },
 };
 
