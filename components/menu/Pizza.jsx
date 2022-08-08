@@ -3,15 +3,15 @@ import BuildYourOwnPizza from "./pizza/BuildYourOwnPizza";
 import SpecialtyPizza from "./pizza/SpecialtyPizza";
 
 function Pizza() {
-  const specialView = "View Our Specialty Pizza's";
-  const byopView = "Build Your Own Pizza";
+  const Specialty_Pizza = "View Our Specialty Pizza's";
+  const Build_Your_Own_Pizza = "Build Your Own Pizza";
 
-  const [view, setView] = useState(specialView);
+  const [view, setView] = useState(Build_Your_Own_Pizza);
   const changeView = () => {
-    if (view === byopView) {
-      setView(specialView);
+    if (view === Build_Your_Own_Pizza) {
+      setView(Specialty_Pizza);
     } else {
-      setView(byopView);
+      setView(Build_Your_Own_Pizza);
     }
   };
   return (
@@ -20,7 +20,7 @@ function Pizza() {
         {view}
       </button>
 
-      {view === specialView ? (
+      {view === Specialty_Pizza ? (
         <>
           {" "}
           <BuildYourOwnPizza /> <div className="fade" id="fade"></div>

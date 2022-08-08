@@ -103,19 +103,16 @@ const PizzaData = {
         "Pesto & Grilled Chicken is the perfect answer to your pizza craving.",
       ],
     ],
-    Other: {
-      Cost: 10.5,
-      Types: [
-        {
-          Calzone:
-            "A pocket of dough generously filled with our homemade marinara and plenty of mozzarella. Baked until golden brown and delicious.",
-        },
-        {
-          Panzerotti:
-            "Mozzarella and zesty marinara are stuffed into a dough pocket and deep fried for tasty satisfaction.",
-        },
+    Other: [
+      [
+        "Calzone",
+        "A pocket of dough generously filled with our homemade marinara and plenty of mozzarella. Baked until golden brown and delicious.",
       ],
-    },
+      [
+        "Panzerotti",
+        "Mozzarella and zesty marinara are stuffed into a dough pocket and deep fried for tasty satisfaction.",
+      ],
+    ],
   },
 };
 

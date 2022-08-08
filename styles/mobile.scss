@@ -220,6 +220,30 @@ html {
           .pizza_card {
             font-size: 2rem;
             min-width: 80%;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+          }
+        }
+        .other_pizza_items {
+          margin-bottom: 3rem;
+          h1 {
+            font-size: 2.75rem;
+          }
+          small {
+            font-size: 2.5rem;
+          }
+          .other_pizza_container {
+            flex-direction: column;
+            .other_card {
+              min-width: 80%;
+              max-width: 80%;
+              h3 {
+                font-size: 2.5rem;
+              }
+              p {
+                font-size: 2rem;
+              }
+            }
           }
         }
       }

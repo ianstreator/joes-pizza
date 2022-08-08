@@ -30,6 +30,7 @@ export default function Home() {
           <a href="tel:847-524-2204">
             <Image
               src={"/phone-icon.svg"}
+              alt={"phone-icon"}
               width={imageSize}
               height={imageSize}
             ></Image>
@@ -41,6 +42,7 @@ export default function Home() {
           >
             <Image
               src={"/map-icon.svg"}
+              alt={"map-icon"}
               width={imageSize}
               height={imageSize}
             ></Image>
