@@ -1,4 +1,4 @@
-const Appetizers = {
+const AppetizersData = {
   Quantity: ["6pc", "12pc", "24pc"],
   quantityAppetizers: {
     "Jumbo Buffalo Wings": [
@@ -74,4 +74,4 @@ const Appetizers = {
   },
 };
 
-export default Appetizers;
+export default AppetizersData;
