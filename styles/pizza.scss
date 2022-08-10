@@ -251,6 +251,7 @@
     flex-direction: column;
     align-items: center;
     min-width: 100%;
+    padding-top: 2rem;
     h1 {
       font-size: 2rem;
     }
@@ -261,6 +262,7 @@
     .other_pizza_container {
       display: flex;
       align-items: center;
+      width: 100%;
       justify-content: space-between;
       .other_card {
         background-color: var(--secondaryColor);
@@ -268,7 +270,8 @@
         min-width: 18rem;
         max-width: 18rem;
         min-height: 10rem;
-        margin-top: 2rem;
+        margin: 1rem;
+        margin-top: 1.5rem;
         padding: 0.25rem;
         border-radius: 0.25rem;
         display: flex;
