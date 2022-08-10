@@ -11,7 +11,7 @@ function Pasta() {
         {toppers.map((e) => {
           return (
             // <div className="card">
-              <h3 className="name_cost"> {e}</h3>
+              <h3 key={e} className="name_cost"> {e}</h3>
             // </div>
           );
         })}
