@@ -8,7 +8,7 @@ function Pasta() {
       <div className="card">
         {toppers.map((e) => {
           return (
-            <div className="card_header">
+            <div key={e} className="card_header">
               <h3 key={e} className="name_cost">
                 {e}
               </h3>
