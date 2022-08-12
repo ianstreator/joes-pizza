@@ -24,7 +24,7 @@ function SpecialtyPizza() {
         })}
         <section className="other_pizza_items">
           <h1>{`Calzones & Panzerotti  $10.50 each`}</h1>
-          <small>{`(+$1.50 per additional ingredient)`}</small>
+          <small>{`( + $1.50 per additional ingredient )`}</small>
           <div className="other_pizza_container">
             {Other.map(([name, description]) => {
               return (

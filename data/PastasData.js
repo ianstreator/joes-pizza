@@ -48,7 +48,7 @@ const PastasData = {
     [
       "Chicken Parmigiana",
       13.5,
-      "A juicy chicken breast, light.y breaded or grilled, smothered in a flavorful tomato sauce and cheese with your choice of spaghetti or penne.",
+      "A juicy chicken breast, lightly breaded or grilled, smothered in a flavorful tomato sauce and cheese with your choice of spaghetti or penne.",
     ],
     [
       "Eggplant Parmigiana",

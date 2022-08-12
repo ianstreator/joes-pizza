@@ -8,7 +8,7 @@ function Beverages() {
           <div key={type} className="card" style={{ display: "flex" }}>
             <div className="card_header">
               <h1 className="name_cost">{`${type}`}</h1>
-              <p className="name_cost small">{`( $${price.toFixed(2)} )`}</p>
+              <p className="name_cost small">{`$${price.toFixed(2)}`}</p>
             </div>
           </div>
         );

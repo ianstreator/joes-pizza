@@ -9,7 +9,7 @@ import Information from "../components/Information";
 import Menu from "../components/Menu";
 
 export default function Home() {
-  const [theme, setTheme] = useState(true);
+  const [theme, setTheme] = useState(false);
   const [view, setView] = useState("Menu");
   const imageSize = 50;
   const changeView = () => {

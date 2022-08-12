@@ -228,8 +228,9 @@
     .pizza_card {
       background-color: var(--secondaryColor);
       color: white;
-      min-width: 18rem;
-      max-width: 15rem;
+      // min-width: 18rem;
+      // max-width: 15rem;
+      width: 100%;
       margin: 1rem;
       padding: 0.25rem;
       padding-top: 1rem;
