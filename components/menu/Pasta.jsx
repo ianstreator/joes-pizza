@@ -1,4 +1,5 @@
 import Pastas from "../../data/PastasData";
+import Card from "../shared/Card";
 
 function Pasta() {
   const dishes = Pastas.Pastas;
@@ -20,16 +21,8 @@ function Pasta() {
 
       <h1 className="section_header">Entrées</h1>
       <div className="small_container">
-        {dishes.map(([name, cost, description]) => {
-          return (
-            <div key={name} className="card">
-              <div className="card_header">
-                <h1 className="name_cost">{name}</h1>
-                <p className="name_cost small">{`$${cost.toFixed(2)}`} </p>
-              </div>
-              <p className="description">{description}</p>
-            </div>
-          );
+        {dishes.map((pastaInfo) => {
+          return <Card key={pastaInfo[0]}>{pastaInfo}</Card>;
         })}
       </div>
     </div>

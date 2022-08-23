@@ -14,14 +14,16 @@
   overflow-y: scroll;
   width: 100%;
   height: fit-content;
-  padding: .5rem;
+  padding: 0.5rem;
+  overflow-x: hidden;
 }
 
 .section_header {
-  font-size: 2.5rem;
+  font-size: 4rem;
   width: 100%;
-  text-align: center;
-  margin: .5rem;
+  text-align: start;
+  text-indent: 1rem;
+  margin: 0.5rem;
 }
 
 .card {
@@ -45,12 +47,25 @@
     justify-content: space-between;
     word-wrap: none;
     width: 100%;
+    .name_cost {
+      font-size: 2rem;
+      max-width: 70%;
+      margin: unset;
+      text-align: start;
+      margin-bottom: auto;
+      &.small {
+        font-weight: 200;
+        height: 100%;
+        width: fit-content;
+        margin-left: auto;
+      }
+    }
   }
 
   .description {
     min-width: 90%;
     max-width: 90%;
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     margin: auto;
     margin-top: 2rem;
     margin-left: unset;
@@ -68,18 +83,4 @@ h3 {
   width: 50%;
   display: flex;
   flex-direction: column;
-}
-.name_cost {
-  font-size: 2.5rem;
-  max-width: 70%;
-  margin: unset;
-  text-align: start;
-  margin-bottom: auto;
-  &.small {
-    font-size: 2.5rem;
-    font-weight: 200;
-    height: 100%;
-    width: fit-content;
-    margin-left: auto;
-  }
 }
