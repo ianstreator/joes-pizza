@@ -47,71 +47,88 @@ const PizzaData = {
 
   SpecialtyPizza: {
     Size_Cost: [
-      [12, 16],
-      [14, 20],
-      [16, 23],
-      [18, 26],
+      { size: 12, cost: 16 },
+      { size: 14, cost: 20 },
+      { size: 16, cost: 23 },
+      { size: 18, cost: 26 },
     ],
     Pizza: [
-      [
-        "Joe's Fabulous Four",
-        "A classic pizza featuring savory Italian sausage, fresh mushrooms, onions and green peppers.",
-      ],
-      [
-        "Joe's Vegetarian Supreme",
-        "Piled high with garden-fresh mushrooms, onions, green peppers, and sliced tomatoes.",
-      ],
-      [
-        "Joe's Vegetarian Delight",
-        "Joe's combination of spinach, mushrooms, black olives, and sliced tomatoes will make this an instant favorite of any veggie lover.",
-      ],
-      [
-        "Joe's BBQ Pizza",
-        "Sausage, crispy, bacon, and onions with Joe's zesty BBQ Sauce.",
-      ],
-      [
-        "Honolulu Joe's",
-        "A delightful tropical twist of Canadian bacon and sweet onions.",
-      ],
-      [
-        "Meaty Joe's",
-        "A mighty, meaty combination of pepperoni, sausage, ground beef, bacon, and canadian bacon.",
-      ],
-      [
-        "Mama's White Pizza",
-        "Juicy grilled chicken and fresh spinach on Mama's homemade alfredo sauce.",
-      ],
-      [
-        "Mama's Spicy White Pizza",
-        "Juicy grilled cajun chicken and fresh spinach on Mama's homemade alfredo sauce.",
-      ],
-      [
-        "Joe's Cheezy Beef Pizza",
-        "Our Italian beef, sweet peppers, and mozzarella with garlic butter sauce.",
-      ],
-      [
-        "Superbowl Pizza",
-        "Blackened Chicken, Buffalo Sauce, Crumbled Blue Cheese and Mozzarella.",
-      ],
-      ["Mama's Meatball Pizza", "With Hot or Sweet Peppers."],
-      [
-        "Chef Special Pizza",
-        "Roasted Whole Garlic and Butter Bottom, Artichoke, Mushroom and Spinach.",
-      ],
-      [
-        "Pesto Grilled Chicken Pizza",
-        "Pesto & Grilled Chicken is the perfect answer to your pizza craving.",
-      ],
+      {
+        name: "Joe's Fabulous Four",
+        description:
+          "A classic pizza featuring savory Italian sausage, fresh mushrooms, onions and green peppers.",
+      },
+      {
+        name: "Joe's Vegetarian Supreme",
+        description:
+          "Piled high with garden-fresh mushrooms, onions, green peppers, and sliced tomatoes.",
+      },
+      {
+        name: "Joe's Vegetarian Delight",
+        description:
+          "Joe's combination of spinach, mushrooms, black olives, and sliced tomatoes will make this an instant favorite of any veggie lover.",
+      },
+      {
+        name: "Joe's BBQ Pizza",
+        description:
+          "Sausage, crispy, bacon, and onions with Joe's zesty BBQ Sauce.",
+      },
+      {
+        name: "Honolulu Joe's",
+        description:
+          "A delightful tropical twist of Canadian bacon and sweet onions.",
+      },
+      {
+        name: "Meaty Joe's",
+        description:
+          "A mighty, meaty combination of pepperoni, sausage, ground beef, bacon, and canadian bacon.",
+      },
+      {
+        name: "Mama's White Pizza",
+        description:
+          "Juicy grilled chicken and fresh spinach on Mama's homemade alfredo sauce.",
+      },
+      {
+        name: "Mama's Spicy White Pizza",
+        description:
+          "Juicy grilled cajun chicken and fresh spinach on Mama's homemade alfredo sauce.",
+      },
+      {
+        name: "Joe's Cheezy Beef Pizza",
+        description:
+          "Our Italian beef, sweet peppers, and mozzarella with garlic butter sauce.",
+      },
+      {
+        name: "Superbowl Pizza",
+        description:
+          "Blackened Chicken, Buffalo Sauce, Crumbled Blue Cheese and Mozzarella.",
+      },
+      {
+        name: "Mama's Meatball Pizza",
+        description: "With Hot or Sweet Peppers.",
+      },
+      {
+        name: "Chef Special Pizza",
+        description:
+          "Roasted Whole Garlic and Butter Bottom, Artichoke, Mushroom and Spinach.",
+      },
+      {
+        name: "Pesto Grilled Chicken Pizza",
+        description:
+          "Pesto & Grilled Chicken is the perfect answer to your pizza craving.",
+      },
     ],
     Other: [
-      [
-        "Calzone",
-        "A pocket of dough generously filled with our homemade marinara and plenty of mozzarella. Baked until golden brown and delicious.",
-      ],
-      [
-        "Panzerotti",
-        "Mozzarella and zesty marinara are stuffed into a dough pocket and deep fried for tasty satisfaction.",
-      ],
+      {
+        name: "Calzone",
+        description:
+          "A pocket of dough generously filled with our homemade marinara and plenty of mozzarella. Baked until golden brown and delicious.",
+      },
+      {
+        name: "Panzerotti",
+        description:
+          "Mozzarella and zesty marinara are stuffed into a dough pocket and deep fried for tasty satisfaction.",
+      },
     ],
   },
 };

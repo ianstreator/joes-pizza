@@ -1,27 +1,35 @@
 const AppetizersData = {
   Quantity: ["6pc", "12pc", "24pc"],
-  quantityAppetizers: {
-    "Jumbo Buffalo Wings": [
-      ["8.99", "11.99", "22.99"],
-      "Famous meaty wings hand-dipped in your choice of mild, medium, hot BBQ or garlic sauce, served with a side of blue cheese or ranch.",
-    ],
-    "Chicken Strips": [
-      ["7.25", "13.00", "23.00"],
-      "Home-style battered and served regular or buffalo with blue cheese or ranch.",
-    ],
-    "Fried Ravioli": [
-      ["8.00", "14.00", "25.00"],
-      "Fried golden brown and served with our homemade marinara.",
-    ],
-    "Mozzarella Sticks": [
-      ["6.25", "10.25", "18.25"],
-      "Creamy mozzarella breaded and served with marinara.",
-    ],
-    "Jalepeno Poppers": [
-      ["6.75", "11.25", "20.00"],
-      "Spicy Jalapenos stuffed with cream cheese. Served with marinara or ranch.",
-    ],
-  },
+  quantityAppetizers: [
+    {
+      name: "Jumbo Buffalo Wings",
+      cost: [{ "6pc": 8.99 }, { "12pc": 11.99 }, { "24pc": 22.99 }],
+      description:
+        "Famous meaty wings hand-dipped in your choice of mild, medium, hot BBQ or garlic sauce, served with a side of blue cheese or ranch.",
+    },
+    {
+      name: "Chicken Strips",
+      cost: [{ "6pc": 7.25 }, { "12pc": 13.0 }, { "24pc": 23.0 }],
+      description:
+        "Home-style battered and served regular or buffalo with blue cheese or ranch.",
+    },
+    {
+      name: "Fried Ravioli",
+      cost: [{ "6pc": 8.0 }, { "12pc": 14.0 }, { "24pc": 25.0 }],
+      description: "Fried golden brown and served with our homemade marinara.",
+    },
+    {
+      name: "Mozzarella Sticks",
+      cost: [{ "6pc": 6.25 }, { "12pc": 10.25 }, { "24pc": 18.25 }],
+      description: "Creamy mozzarella breaded and served with marinara.",
+    },
+    {
+      name: "Jalepeno Poppers",
+      cost: [{ "6pc": 6.75 }, { "12pc": 11.25 }, { "24pc": 20.0 }],
+      description:
+        "Spicy Jalapenos stuffed with cream cheese. Served with marinara or ranch.",
+    },
+  ],
   soloAppetizers: {
     "Onion Rings": [5.99, "Mound of crispy rings, enough to share."],
     Calamari: [

@@ -6,7 +6,8 @@ function Pasta() {
   const toppers = Pastas.Toppers;
   return (
     <div className="main_container">
-      <div className="card">
+      <h1 className="section_header">Toppers</h1>
+      <div className="card special">
         {toppers.map((e) => {
           return (
             <div key={e} className="card_header">
@@ -19,10 +20,10 @@ function Pasta() {
         })}
       </div>
 
-      <h1 className="section_header">Entrées</h1>
+      <h1 className="section_header">Pastas</h1>
       <div className="small_container">
         {dishes.map((pastaInfo) => {
-          return <Card key={pastaInfo[0]}>{pastaInfo}</Card>;
+          return <Card key={pastaInfo.name}>{pastaInfo}</Card>;
         })}
       </div>
     </div>

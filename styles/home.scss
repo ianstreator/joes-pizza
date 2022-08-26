@@ -37,7 +37,7 @@
   align-items: center;
   background-color: var(--backgroundColor);
   background-image: var(--backgroundImage);
-  background-size: contain;
+  background-size: 85%;
   width: 100vw;
   height: 100vh;
 }
@@ -228,6 +228,7 @@
       color: var(--textColor);
       padding: 1rem;
       padding-bottom: 0;
+      padding-top: 0;
       min-width: 40rem;
       width: 100%;
       transition: 300ms;
@@ -241,7 +242,7 @@
 }
 .pizza {
   position: relative;
-  
+
   .fade {
     background-image: linear-gradient(
       to top,

@@ -1,13 +1,13 @@
 import styles from "./Card.module.scss";
 
-function Card({ children: [itemName, itemPrice, itemDescription] }) {
+function Card({ children: { name, cost = false, description } }) {
   return (
     <div className={styles.card}>
       <div className={styles.name_cost_container}>
-        <h1 className={styles.name}>{itemName}</h1>
-        {itemPrice && (
+        <h1 className={styles.name}>{name}</h1>
+        {cost && (
           <div className={styles.cost_container}>
-            {itemPrice.map(({ quantity, price }) => {
+            {cost.map(({ quantity = false, price }) => {
               console.log(quantity, price);
               return (
                 <p key={price} className={styles.cost}>
@@ -20,7 +20,7 @@ function Card({ children: [itemName, itemPrice, itemDescription] }) {
           </div>
         )}
       </div>
-      <p className={styles.description}>{itemDescription}</p>
+      <p className={styles.description}>{description}</p>
     </div>
   );
 }

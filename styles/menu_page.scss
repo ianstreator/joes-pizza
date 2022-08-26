@@ -19,7 +19,7 @@
 }
 
 .section_header {
-  font-size: 4rem;
+  font-size: 2rem;
   width: 100%;
   text-align: start;
   text-indent: 1rem;
@@ -72,6 +72,9 @@
     text-align: start;
     font-style: italic;
     font-weight: 350;
+  }
+  &.special {
+    margin: 0;
   }
 }
 
