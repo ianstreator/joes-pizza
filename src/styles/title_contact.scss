@@ -1,0 +1,12 @@
+.title_contact {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  .title {
+    color: var(--textColor);
+    font-family: Italianno;
+    font-size: 3rem;
+    font-weight: lighter;
+  }
+}

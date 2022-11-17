@@ -1,0 +1,19 @@
+.info {
+    background-color: var(--backgroundColorOffset);
+    color: var(--secondaryColor);
+    min-height: 36rem;
+    max-height: 36rem;
+    width: 100%;
+    justify-content: space-around;
+    box-shadow: 0px 3px 6px 0px hsla(0, 0%, 0%, 0.5);
+    .info1 {
+      color: var(--info1);
+    }
+    .info2 {
+      color: var(--info2);
+    }
+    .info3 {
+      color: var(--info3);
+    }
+  }
+  

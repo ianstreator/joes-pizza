@@ -1,0 +1,87 @@
+:root {
+  --backgroundColor: hsl(45, 8%, 13%);
+  --backgroundColorOpposite: hsl(43, 19%, 93%);
+  --backgroundColorOffset: hsl(0, 0%, 20%);
+  --primaryColor: hsl(213, 35%, 29%);
+  --buttonColor: hsl(212, 65%, 30%);
+  --textColor: hsl(0, 0%, 100%);
+  --info1: hsl(107, 71%, 80%);
+  --info2: hsl(0, 0%, 90%);
+  --info3: hsl(14, 71%, 80%);
+}
+
+.light {
+  --backgroundColor: hsl(43, 19%, 93%);
+  --backgroundColorOpposite: hsl(45, 18%, 13%);
+  --backgroundColorOffset: hsl(0, 0%, 100%);
+  --textColor: rgb(0, 0, 0);
+  --info1: hsl(213, 35%, 29%);
+  --info2: hsl(213, 35%, 29%);
+  --info3: hsl(213, 35%, 29%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: hsl(212, 28%, 40%);
+  color: hsl(0, 0%, 100%);
+  height: 100vh;
+  max-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  background-color: hsl(212, 65%, 30%);
+  color: hsl(0, 0%, 100%);
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+#__next {
+  width: 100vw;
+  height: 100vh;
+  .app {
+    width: 100%;
+    height: 100%;
+    .main {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: var(--backgroundColor);
+      .main_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+        height: 100%;
+        .main_content_container {
+          width: 100%;
+          height: 46rem;
+        }
+        .view_btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

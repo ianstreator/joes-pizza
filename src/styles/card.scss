@@ -1,0 +1,44 @@
+.card {
+  background-color: var(--primaryColor);
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  min-height: 10rem;
+  max-height: 10rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .top_card {
+    display: flex;
+    justify-content: space-between;
+    .name {
+      font-size: 1.5rem;
+      font-weight: bolder;
+    }
+    .cost {
+      font-size: 1.5rem;
+    }
+  }
+  .bottom_card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .description {
+      width: 80%;
+      font-size: 1.1rem;
+    }
+    .cart-icon {
+      background-color: hsl(0, 0%, 100%);
+      width: 40px;
+      height: 40px;
+      padding: 0.5rem;
+      border-radius: 25px;
+      margin-top: auto;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
