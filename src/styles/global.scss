@@ -2,8 +2,12 @@
   --backgroundColor: hsl(45, 8%, 13%);
   --backgroundColorOpposite: hsl(43, 19%, 93%);
   --backgroundColorOffset: hsl(0, 0%, 20%);
+  --cartBackgroundColor: hsl(0, 0%, 15%);
+  --cartCountColor: hsl(0, 0%, 10%);
+  --cardColor: hsl(213,35%,19%);
   --primaryColor: hsl(213, 35%, 29%);
   --buttonColor: hsl(212, 65%, 30%);
+  --buttonHoverColor: hsl(212, 65%, 40%);
   --textColor: hsl(0, 0%, 100%);
   --info1: hsl(107, 71%, 80%);
   --info2: hsl(0, 0%, 90%);
@@ -47,12 +51,16 @@ a {
 }
 
 button {
-  background-color: hsl(212, 65%, 30%);
-  color: hsl(0, 0%, 100%);
+  background-color: var(--buttonColor);
+  color: var(--textColor);
   padding: 0.5rem;
   border-radius: 4px;
   border: none;
   cursor: pointer;
+  transition: 200ms;
+  &:hover {
+    background-color: var(--buttonHoverColor);
+  }
 }
 
 #__next {
@@ -83,5 +91,27 @@ button {
         }
       }
     }
+  }
+}
+
+.container {
+  background-color: var(--primaryColor);
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  .name {
+    font-weight: bolder;
+  }
+  .cost {
+    font-weight: lighter;
+  }
+  .horizontal_grouping {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.2rem;
+  }
+  .vertical_grouping {
   }
 }

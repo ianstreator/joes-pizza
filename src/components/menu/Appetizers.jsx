@@ -6,7 +6,7 @@ function Appetizers() {
   const quantityApps = AppetizersData.quantityAppetizers;
   const soloApps = AppetizersData.soloAppetizers;
   return (
-    <div className="main_container">
+    <>
       <h1 className="section_header">Shareables</h1>
       <table style={{ fontSize: "2rem" }}>
         <thead>
@@ -35,7 +35,7 @@ function Appetizers() {
           <Card key={i}>{app}</Card>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 

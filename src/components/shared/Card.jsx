@@ -1,33 +1,36 @@
 import Image from "next/image";
+import CartContext from "../../context/CartContext";
+import { useContext } from "react";
 
-function Card({ children: { name, cost = false, description } }) {
+function Card({ children: { name, price, description } }) {
+  const { addItem } = useContext(CartContext);
   const addToCartSize = 25;
   return (
     <div className="card">
       <div className="top_card">
         <p className="name">{name}</p>
-        {cost && (
-          <div className="cost">
-            {cost.map(({ quantity = false, price }, i) => (
-              <p key={i}>
-                {quantity
-                  ? `( ${quantity} / $${price.toFixed(2)} )`
-                  : `$${price.toFixed(2)}`}
-              </p>
-            ))}
-          </div>
-        )}
+        <div className="cost" key={price}>
+          ${price}
+        </div>
       </div>
       <div className="bottom_card">
         <p className="description">{description}</p>
-        <div className="cart-icon">
+        <button
+          className="add-cart-icon"
+          onClick={() =>
+            addItem({
+              itemName: name,
+              itemCost: cost?.price ? cost.price : cost,
+            })
+          }
+        >
           <Image
-            src={"/add-to-cart-icon-dark.svg"}
+            src={"/add-to-cart-icon.svg"}
             width={addToCartSize}
             height={addToCartSize}
             alt={"add-cart"}
           ></Image>
-        </div>
+        </button>
       </div>
     </div>
   );

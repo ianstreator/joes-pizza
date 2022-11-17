@@ -5,13 +5,13 @@ function Pasta() {
   const dishes = Pastas.Pastas;
   const toppers = Pastas.Toppers;
   return (
-    <div className="main_container">
+    <>
       <h1 className="section_header">Toppers</h1>
-      <div className="card special">
+      <div className="container">
         {toppers.map((e, i) => (
-          <div key={i} className="card_header">
-            <h3 className="name_cost">{e}</h3>
-            <p className="name_cost small">{`+ $4.75`}</p>
+          <div key={i} className="horizontal_grouping">
+            <p className="name">{e}</p>
+            <p className="cost">{`+ $4.75`}</p>
           </div>
         ))}
       </div>
@@ -22,7 +22,7 @@ function Pasta() {
           <Card key={i}>{pastaInfo}</Card>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 

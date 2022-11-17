@@ -1,7 +1,7 @@
 const DinnersData = [
   {
     name: "Fried Shrimp",
-    cost: [
+    prices: [
       { quantity: ".5 lb", price: 13.75 },
       { quantity: "1 lb", price: 18.75 },
     ],
@@ -11,7 +11,7 @@ const DinnersData = [
 
   {
     name: "Fried Tilapia",
-    cost: [{ quantity: "4pc", price: 16.95 }],
+    prices: [{ quantity: "4pc", price: 16.95 }],
     description:
       "Flaky tilapia fillets prepared in a delightful crunchy, golden batter.",
   },

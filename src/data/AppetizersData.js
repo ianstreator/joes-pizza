@@ -3,7 +3,7 @@ const AppetizersData = {
   quantityAppetizers: [
     {
       name: "Jumbo Buffalo Wings",
-      cost: [
+      prices: [
         { quantity: 6, price: 8.99 },
         { quantity: 12, price: 11.99 },
         { quantity: 24, price: 22.99 },
@@ -13,7 +13,7 @@ const AppetizersData = {
     },
     {
       name: "Chicken Strips",
-      cost: [
+      prices: [
         { quantity: 6, price: 7.25 },
         { quantity: 12, price: 13.0 },
         { quantity: 24, price: 23.0 },
@@ -23,7 +23,7 @@ const AppetizersData = {
     },
     {
       name: "Fried Ravioli",
-      cost: [
+      prices: [
         { quantity: 6, price: 8.0 },
         { quantity: 12, price: 14.0 },
         { quantity: 24, price: 25.0 },
@@ -32,7 +32,7 @@ const AppetizersData = {
     },
     {
       name: "Mozzarella Sticks",
-      cost: [
+      prices: [
         { quantity: 6, price: 6.25 },
         { quantity: 12, price: 10.25 },
         { quantity: 24, price: 18.25 },
@@ -41,7 +41,7 @@ const AppetizersData = {
     },
     {
       name: "Jalepeno Poppers",
-      cost: [
+      prices: [
         { quantity: 6, price: 6.75 },
         { quantity: 12, price: 11.25 },
         { quantity: 24, price: 20.0 },
@@ -53,51 +53,51 @@ const AppetizersData = {
   soloAppetizers: [
     {
       name: "Onion Rings",
-      cost: [{ price: 5.99 }],
+      price: 5.99,
       description: "Mound of crispy rings, enough to share.",
     },
     {
       name: "Calamari",
-      cost: [{ price: 9.75 }],
+      price: 9.75,
       description:
         "An Italian classic, succulent squid deep fried to perfection in an Italian-style batter.",
     },
     {
       name: "Stuffed Mushrooms (6pc)",
-      cost: [{ price: 9.75 }],
+      price: 9.75,
       description:
         "Fresh mushrooms fried in a tasty golden breading. Crab filling 100%.",
     },
     {
       name: "Breaded Cauliflower",
-      cost: [{ price: 6.25 }],
+      price: 6.25,
       description: "Delicately nutty, fried until irresistible.",
     },
     {
       name: "Breaded Zucchini",
-      cost: [{ price: 6.25 }],
+      price: 6.25,
       description: "Sweet garden-fresh zucchini in a golden breading.",
     },
     {
       name: "Breaded Mushrooms",
-      cost: [{ price: 6.25 }],
+      price: 6.25,
       description: "Fresh mushrooms fried in a tasty golden breading.",
     },
     {
       name: "Veggie Combo",
-      cost: [{ price: 9.25 }],
+      price: 9.25,
       description:
         "Eating your veggies is easy (and tasty) when they're this good! A plentiful mix of mushrooms, cauliflower, and zucchini.	",
     },
     {
       name: "Tour De Joe's",
-      cost: [{ price: 11.5 }],
+      price: 11.5,
       description:
         "The perfect appetizer combination! Jumbo buffalo wings, mozzarella sticks, spicy jalapeno poppers, and breaded mushrooms mean something for everyone!	",
     },
     {
       name: "Breadsticks",
-      cost: [
+      prices: [
         { quantity: "4pc", price: 3.5 },
         { quantity: "8pc", price: 6 },
       ],
@@ -105,36 +105,36 @@ const AppetizersData = {
     },
     {
       name: "Fried Dough Nuggets",
-      cost: [{ price: 9.75 }],
+      price: 9.75,
       description:
         "Tossed in a garlic parmigiana butter, they're just right the perfect bite.",
     },
     {
       name: "Garlic Bread",
-      cost: [{ price: 4.5 }],
+      price: 4.5,
       description: "French bread with garlic and butter.",
     },
     {
       name: "Cheezy Garlic Bread",
-      cost: [{ price: 6.25 }],
+      price: 6.25,
       description:
         "French bread topped with garlic, butter, and melted mozzarella.",
     },
     {
       name: "Pizza Bread",
-      cost: [{ price: 6.25 }],
+      price: 6.25,
       description:
         "French bread topped with garlic, butter, tomato sauce and real mozzarella.        ",
     },
     {
       name: "Ultimate Fries",
-      cost: [{ price: 8.75 }],
+      price: 8.75,
       description:
         'When we say "ultimate" we mean it! These crispy golden wonders are smothered with cheddar cheese and crispy bacon.',
     },
     {
       name: "French Fries",
-      cost: [{ price: 3.75 }],
+      price: 3.75,
       description: "Crispy and golden brown.",
     },
   ],
