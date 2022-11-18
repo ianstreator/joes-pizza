@@ -40,7 +40,7 @@ function Card({ children: { name, price, prices, description } }) {
             src={"/add-to-cart-icon.svg"}
             width={addToCartSize}
             height={addToCartSize}
-            alt={"add-cart"}
+            alt="add-cart"
           ></Image>
         </button>
       </div>

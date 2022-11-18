@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 
@@ -7,12 +7,6 @@ import CartContext from "../../context/CartContext";
 function Cart() {
   const { items, total, setCartView, cartView } = useContext(CartContext);
   const imageSize = 25;
-
-  useEffect(() => {
-    console.log(cartView);
-    console.log(items);
-    console.log(total);
-  }, [cartView]);
 
   return (
     <div className={clsx("cart", cartView && "show")}>
@@ -23,6 +17,7 @@ function Cart() {
               src="/cart-icon.svg"
               width={imageSize}
               height={imageSize}
+              alt="cart"
             ></Image>
           </div>
           <div className="cart_count">{Object.keys(items).length}</div>
@@ -41,6 +36,7 @@ function Cart() {
             src={"/arrow-icon.svg"}
             width={imageSize}
             height={imageSize}
+            alt="arrow"
           ></Image>
         </button>
       </div>
