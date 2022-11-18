@@ -2,8 +2,8 @@
 .menu {
   background-color: var(--backgroundColorOffset);
   color: var(--textColor);
-  min-height: 36rem;
-  max-height: 36rem;
+  min-height: 34rem;
+  max-height: 34rem;
   min-width: 100%;
   max-width: 100%;
   align-items: center;
@@ -98,7 +98,7 @@
           background-color: var(--buttonHoverColor);
         }
         &.close {
-          transform: rotate(180deg);
+          transform: rotate(-180deg);
         }
       }
       .cart_wrapper {

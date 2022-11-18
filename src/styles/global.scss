@@ -76,6 +76,7 @@ button {
       flex-direction: column;
       align-items: center;
       background-color: var(--backgroundColor);
+      background-image: url("../../public/background.svg");
       .main_content {
         display: flex;
         flex-direction: column;
@@ -84,7 +85,7 @@ button {
         height: 100%;
         .main_content_container {
           width: 100%;
-          height: 46rem;
+          height: 40rem;
         }
         .view_btn {
           width: 100%;
