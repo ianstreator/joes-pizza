@@ -18,9 +18,20 @@
       font-size: 1.25rem;
       font-weight: bolder;
     }
-    .cost {
+    .price {
       font-size: 1.5rem;
       font-weight: lighter;
+      &.multi {
+        display: flex;
+        flex-direction: column;
+        font-size: .75rem;
+        min-width: 4rem;
+        max-width: 4rem;
+        .data {
+         display: flex; 
+         justify-content: space-between;
+        }
+      }
     }
   }
   .bottom_card {

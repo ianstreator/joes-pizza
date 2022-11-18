@@ -7,11 +7,11 @@ import Pasta from "./menu/Pasta";
 import Dinners from "./menu/Dinners";
 import Beverages from "./menu/Beverages";
 import Desserts from "./menu/Desserts";
-
 import Cart from "./shared/Cart";
 
 import clsx from "clsx";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 
 function Menu() {
   const [selected, setSelected] = useState("Pizza");
@@ -35,9 +35,13 @@ function Menu() {
 
     Desserts: <Desserts />,
   };
+
+  useEffect(() => {
+    document.getElementById("menu").scrollTop = 0;
+  }, [selected]);
   return (
     <>
-      <div className="menu">
+      <div className="menu" id="menu">
         <nav className="nav">
           <ul>
             {Object.keys(menuCategories).map((category, i) => {

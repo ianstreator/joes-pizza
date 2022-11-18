@@ -32,7 +32,7 @@ export default function Home() {
       <>
         <div className="main_content_container">
           <TitleContact />
-          <div className="menu_info">
+          <div style={{ position: "relative", overflow:"hidden" }}>
             {navTo === "Menu" ? <Information /> : <Menu />}
           </div>
         </div>

@@ -14,7 +14,7 @@ function Pizza() {
     }
   };
   return (
-    <div className="pizza">
+    <div className="pizza" id="category">
       <button className="pizza_toggle" onClick={changeView}>
         {view}
       </button>

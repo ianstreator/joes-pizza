@@ -3,26 +3,26 @@ import Card from "../shared/Card";
 
 function Appetizers() {
   const quantity = AppetizersData.quantity;
-  const quantityApps = AppetizersData.quantityAppetizers;
-  const soloApps = AppetizersData.soloAppetizers;
+  const shareables = AppetizersData.shareables;
+  const solos = AppetizersData.solos;
   return (
-    <>
+    <div id="category">
       <h1 className="section_header">Shareables</h1>
-      <table style={{ fontSize: "2rem" }}>
+      <table style={{ fontSize: "1rem" }}>
         <thead>
           <tr>
             <th style={{ paddingRight: "100%" }}>Name</th>
-            {quantity.map((num, i) => (
-              <th key={i}>{`(${num} pcs)`}</th>
+            {quantity.map((amount, i) => (
+              <th key={i}>{`(${amount} pcs)`}</th>
             ))}
           </tr>
         </thead>
-        <tbody>
-          {quantityApps.map((app, i) => (
+        <tbody >
+          {shareables.map((app, i) => (
             <tr key={i} title={app.name}>
               <td>{app.name}</td>
-              {app.cost.map((price, i) => (
-                <td key={i}>${price.price.toFixed(2)}</td>
+              {app.prices.map((price, i) => (
+                <td key={i}>${price.toFixed(2)}</td>
               ))}
             </tr>
           ))}
@@ -31,11 +31,11 @@ function Appetizers() {
 
       <h1 className="section_header">Solos</h1>
       <div className="small_container">
-        {soloApps.map((app, i) => (
+        {solos.map((app, i) => (
           <Card key={i}>{app}</Card>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

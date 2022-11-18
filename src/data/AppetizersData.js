@@ -1,56 +1,36 @@
 const AppetizersData = {
   quantity: [6, 12, 24],
-  quantityAppetizers: [
+  shareables: [
     {
       name: "Jumbo Buffalo Wings",
-      prices: [
-        { quantity: 6, price: 8.99 },
-        { quantity: 12, price: 11.99 },
-        { quantity: 24, price: 22.99 },
-      ],
+      prices: [8.99, 11.99, 22.99],
       description:
         "Famous meaty wings hand-dipped in your choice of mild, medium, hot BBQ or garlic sauce, served with a side of blue cheese or ranch.",
     },
     {
       name: "Chicken Strips",
-      prices: [
-        { quantity: 6, price: 7.25 },
-        { quantity: 12, price: 13.0 },
-        { quantity: 24, price: 23.0 },
-      ],
+      prices: [7.25, 13.0, 23.0],
       description:
         "Home-style battered and served regular or buffalo with blue cheese or ranch.",
     },
     {
       name: "Fried Ravioli",
-      prices: [
-        { quantity: 6, price: 8.0 },
-        { quantity: 12, price: 14.0 },
-        { quantity: 24, price: 25.0 },
-      ],
+      prices: [8.0, 14.0, 25.0],
       description: "Fried golden brown and served with our homemade marinara.",
     },
     {
       name: "Mozzarella Sticks",
-      prices: [
-        { quantity: 6, price: 6.25 },
-        { quantity: 12, price: 10.25 },
-        { quantity: 24, price: 18.25 },
-      ],
+      prices: [6.25, 10.25, 18.25],
       description: "Creamy mozzarella breaded and served with marinara.",
     },
     {
       name: "Jalepeno Poppers",
-      prices: [
-        { quantity: 6, price: 6.75 },
-        { quantity: 12, price: 11.25 },
-        { quantity: 24, price: 20.0 },
-      ],
+      prices: [6.75, 11.25, 20.0],
       description:
         "Spicy Jalapenos stuffed with cream cheese. Served with marinara or ranch.",
     },
   ],
-  soloAppetizers: [
+  solos: [
     {
       name: "Onion Rings",
       price: 5.99,

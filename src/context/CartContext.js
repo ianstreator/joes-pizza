@@ -11,10 +11,11 @@ export const Provider = ({ children }) => {
     setTotal(Object.values(items).reduce((itemA, itemB) => itemA + itemB, 0));
   }, [items]);
 
-  const addItem = ({ itemName, itemCost }) => {
-    console.log(itemName, itemCost)
-    setItems((currItems) => ({ ...currItems, [itemName]: itemCost }));
-    setTotal((currTotal) => (currTotal += itemCost));
+  const addItem = ({ itemName, itemPrice }) => {
+    if (items[itemName]) return;
+    if (itemPrice.length) console.log("multi option")
+    setItems((currItems) => ({ ...currItems, [itemName]: itemPrice }));
+    setTotal((currTotal) => (currTotal += itemPrice));
   };
 
   return (

@@ -1,8 +1,8 @@
 const prices = [
-  { size: 12, price: 16 },
-  { size: 14, price: 20 },
-  { size: 16, price: 23 },
-  { size: 18, price: 26 },
+  { size: '12"', price: 16 },
+  { size: '14"', price: 20 },
+  { size: '16"', price: 23 },
+  { size: '18"', price: 26 },
 ];
 const PizzaData = {
   BuildYourOwnPizza: {

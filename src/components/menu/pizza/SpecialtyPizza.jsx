@@ -9,8 +9,8 @@ function SpecialtyPizza() {
     <main className="specialty_pizza">
       <header className="specialty_pizza_header">
         <div className="size_cost">
-          {Size_Cost.map(({ size, cost }, i) => (
-            <small key={i}>{`${size}" - $${cost}`}</small>
+          {Size_Cost.map(({ size, price }, i) => (
+            <small key={i}>{`${size} / $${price}`}</small>
           ))}
         </div>
       </header>
