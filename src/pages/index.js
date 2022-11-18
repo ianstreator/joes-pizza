@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <div className="app">
       <Head>
-        <title>Joe's Pizza</title>
+        <title>{"Joe's Pizza"}</title>
         <meta
           name="description"
           content="Italian Pizza Restaurant In Schaumburg Illinois"

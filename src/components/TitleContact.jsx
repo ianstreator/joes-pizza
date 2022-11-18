@@ -4,7 +4,7 @@ function TitleContact() {
   const imageSize = 35;
   return (
     <div className="title_contact">
-      <h1 className="title">Joe's Pizza</h1>
+      <h1 className="title">{"Joe's Pizza"}</h1>
       <div className="contact">
         <a href="tel:847-524-2204">
           <Image

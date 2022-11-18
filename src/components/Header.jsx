@@ -11,7 +11,7 @@ function Header({ isMobile, setTheme, theme }) {
             <p>
               {"The Best Pizza In Schaumburg - Call Now: "}
               <a className="data" href="tel:847-524-2204">
-                (847) 524-2204
+                {"(847) 524-2204"}
               </a>
             </p>
             <p>|</p>
