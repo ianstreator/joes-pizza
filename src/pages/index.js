@@ -32,7 +32,13 @@ export default function Home() {
       <>
         <div className="main_content_container">
           <TitleContact />
-          <div style={{ position: "relative", overflow: "hidden" }}>
+          <div
+            style={{
+              position: "relative",
+              overflow: "hidden",
+              boxShadow: "0px 3px 10px 0px hsla(0, 0%, 0%, 0.5)",
+            }}
+          >
             {navTo === "Menu" ? <Information /> : <Menu />}
           </div>
         </div>

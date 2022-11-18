@@ -4,6 +4,8 @@
   --backgroundColorOffset: hsl(0, 0%, 20%);
   --cartBackgroundColor: hsl(0, 0%, 15%);
   --cartCountColor: hsl(0, 0%, 10%);
+  --cartIconBackgroundColor: hsl(0, 0%, 5%);
+  --cartHeadTextColor: hsl(0, 0%, 100%);
   --cardColor: hsl(213,35%,19%);
   --primaryColor: hsl(213, 35%, 29%);
   --buttonColor: hsl(212, 65%, 30%);
@@ -16,6 +18,10 @@
 
 .light {
   --backgroundColor: hsl(43, 19%, 93%);
+  --cartBackgroundColor: hsl(43, 19%, 93%);
+  --cartIconBackgroundColor: hsl(213, 35%, 29%);
+  --cartHeadTextColor: hsl(0, 0%, 0%);
+  --cartCountColor: hsl(0, 0%, 100%);
   --backgroundColorOpposite: hsl(45, 18%, 13%);
   --backgroundColorOffset: hsl(0, 0%, 100%);
   --textColor: rgb(0, 0, 0);
@@ -89,6 +95,7 @@ button {
         }
         .view_btn {
           width: 100%;
+          color: hsl(0, 0%, 100%);
         }
       }
     }
