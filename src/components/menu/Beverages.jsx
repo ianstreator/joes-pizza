@@ -5,7 +5,7 @@ function Beverages() {
   return (
     <>
       {BeveragesData.map((beverage, i) => (
-        <Card key={i} children={beverage} />
+        <Card key={i}>{beverage}</Card>
       ))}
     </>
   );

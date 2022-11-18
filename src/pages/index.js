@@ -32,7 +32,7 @@ export default function Home() {
       <>
         <div className="main_content_container">
           <TitleContact />
-          <div style={{ position: "relative", overflow:"hidden" }}>
+          <div style={{ position: "relative", overflow: "hidden" }}>
             {navTo === "Menu" ? <Information /> : <Menu />}
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
         <link
-          href="https://fonts.googleapis.com/css?family=Italianno"
+          href="https://fonts.googleapis.com/css?family=Italianno&display=optional"
           rel="stylesheet"
         ></link>
       </Head>
