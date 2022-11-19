@@ -1,10 +1,26 @@
 import Image from "next/image";
 import CartContext from "../../context/CartContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 function Card({ children: { name, price, prices, description } }) {
-  const { addItem } = useContext(CartContext);
+  const { addItem, removeItem, items } = useContext(CartContext);
+  const [inCart, setInCart] = useState(false);
   const addToCartSize = 25;
+
+  const adjustCart = ({ itemName, itemPrice }) => {
+    if (typeof itemPrice !== "number") return
+    if (inCart) {
+      removeItem(itemName);
+      setInCart(false);
+    } else {
+      addItem({ itemName, itemPrice });
+      setInCart(true);
+    }
+  };
+
+  useEffect(() => {
+    setInCart(items[name])
+  },[items])
   return (
     <div className="card">
       <div className="top_card">
@@ -28,19 +44,21 @@ function Card({ children: { name, price, prices, description } }) {
       <div className="bottom_card">
         <p className="description">{description}</p>
         <button
-          className="add-cart-icon"
+          className="adjust_cart_icon"
           onClick={() =>
-            addItem({
+            adjustCart({
               itemName: name,
               itemPrice: prices ? prices : price,
             })
           }
         >
           <Image
-            src={"/add-to-cart-icon.svg"}
+            src={
+              inCart ? "/remove-from-cart-icon.svg" : "/add-to-cart-icon.svg"
+            }
             width={addToCartSize}
             height={addToCartSize}
-            alt="add-cart"
+            alt="adjust_cart"
           ></Image>
         </button>
       </div>

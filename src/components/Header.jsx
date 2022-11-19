@@ -29,7 +29,7 @@ function Header({ isMobile, setTheme, theme }) {
               src={theme ? "/dark.svg" : "/light.svg"}
               width={themeToggleSize}
               height={themeToggleSize}
-              alt="theme-toggle"
+              alt="theme_toggle"
             ></Image>
           </div>
         </div>

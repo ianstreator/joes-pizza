@@ -76,21 +76,21 @@ const PizzaData = {
         name: "Joe's Fabulous Four",
         prices,
         description:
-          "A classic pizza featuring savory Italian sausage, fresh mushrooms, onions and green peppers.",
+          "Savory Italian sausage, fresh mushrooms, onions and green peppers.",
       },
       {
         name: "Joe's Vegetarian Supreme",
         prices,
 
         description:
-          "Piled high with garden-fresh mushrooms, onions, green peppers, and sliced tomatoes.",
+          "Garden-fresh mushrooms, onions, green peppers, and sliced tomatoes.",
       },
       {
         name: "Joe's Vegetarian Delight",
         prices,
 
         description:
-          "Joe's combination of spinach, mushrooms, black olives, and sliced tomatoes will make this an instant favorite of any veggie lover.",
+          "Spinach, mushrooms, black olives, and sliced tomatoes.",
       },
       {
         name: "Joe's BBQ Pizza",
@@ -104,14 +104,14 @@ const PizzaData = {
         prices,
 
         description:
-          "A delightful tropical twist of Canadian bacon and sweet onions.",
+          "Canadian bacon and sweet onions.",
       },
       {
         name: "Meaty Joe's",
         prices,
 
         description:
-          "A mighty, meaty combination of pepperoni, sausage, ground beef, bacon, and canadian bacon.",
+          "Pepperoni, sausage, ground beef, bacon, and canadian bacon.",
       },
       {
         name: "Mama's White Pizza",
@@ -132,7 +132,7 @@ const PizzaData = {
         prices,
 
         description:
-          "Our Italian beef, sweet peppers, and mozzarella with garlic butter sauce.",
+          "Italian beef, sweet peppers, and mozzarella with garlic butter sauce.",
       },
       {
         name: "Superbowl Pizza",
@@ -167,7 +167,7 @@ const PizzaData = {
         name: "Calzone",
         price: 10.5,
         description:
-          "A pocket of dough generously filled with our homemade marinara and plenty of mozzarella. Baked until golden brown and delicious.",
+          "A pocket of dough filled with our homemade marinara and mozzarella. Baked until golden brown and delicious.",
       },
       {
         name: "Panzerotti",

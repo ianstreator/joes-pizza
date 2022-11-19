@@ -19,12 +19,12 @@
       font-weight: bolder;
     }
     .price {
-      font-size: 1.5rem;
-      font-weight: lighter;
+      font-size: 1.25rem;
       &.multi {
         display: flex;
         flex-direction: column;
         font-size: .75rem;
+        font-weight: lighter;
         min-width: 4rem;
         max-width: 4rem;
         .data {
@@ -39,9 +39,11 @@
     justify-content: space-between;
     align-items: flex-end;
     .description {
-      width: 80%;
+      width: 70%;
+      font-style: italic;
+      font-weight: lighter;
     }
-    .add-cart-icon {
+    .adjust_cart_icon {
       width: 40px;
       height: 40px;
       padding: 0.5rem;

@@ -40,7 +40,7 @@ const AppetizersData = {
       name: "Calamari",
       price: 9.75,
       description:
-        "An Italian classic, succulent squid deep fried to perfection in an Italian-style batter.",
+        "Succulent squid deep fried to perfection in an Italian-style batter.",
     },
     {
       name: "Stuffed Mushrooms (6pc)",
@@ -67,13 +67,13 @@ const AppetizersData = {
       name: "Veggie Combo",
       price: 9.25,
       description:
-        "Eating your veggies is easy (and tasty) when they're this good! A plentiful mix of mushrooms, cauliflower, and zucchini.	",
+        "A plentiful mix of mushrooms, cauliflower, and zucchini.	",
     },
     {
       name: "Tour De Joe's",
       price: 11.5,
       description:
-        "The perfect appetizer combination! Jumbo buffalo wings, mozzarella sticks, spicy jalapeno poppers, and breaded mushrooms mean something for everyone!	",
+        "Jumbo buffalo wings, mozzarella sticks, spicy jalapeno poppers, and breaded mushrooms.",
     },
     {
       name: "Breadsticks",
@@ -110,7 +110,7 @@ const AppetizersData = {
       name: "Ultimate Fries",
       price: 8.75,
       description:
-        'When we say "ultimate" we mean it! These crispy golden wonders are smothered with cheddar cheese and crispy bacon.',
+        'These crispy golden wonders are smothered with cheddar cheese and crispy bacon.',
     },
     {
       name: "French Fries",

@@ -13,14 +13,30 @@ export const Provider = ({ children }) => {
 
   const addItem = ({ itemName, itemPrice }) => {
     if (items[itemName]) return;
-    if (itemPrice.length) console.log("multi option")
+    if (itemPrice.length) return console.log("multi option");
     setItems((currItems) => ({ ...currItems, [itemName]: itemPrice }));
-    setTotal((currTotal) => (currTotal += itemPrice));
+    // setTotal((currTotal) => (currTotal += itemPrice));
+  };
+  const removeItem = (itemName) => {
+    if (!items[itemName]) return;
+    setItems((currItems) => {
+      const updatedItems = { ...currItems };
+      delete updatedItems[itemName];
+      return updatedItems;
+    });
   };
 
   return (
     <CartContext.Provider
-      value={{ total, items, setItems, setCartView, cartView, addItem }}
+      value={{
+        total,
+        items,
+        setItems,
+        setCartView,
+        cartView,
+        addItem,
+        removeItem,
+      }}
     >
       {children}
     </CartContext.Provider>

@@ -11,7 +11,7 @@ import Header from "../components/Header";
 
 export default function Home() {
   const [theme, setTheme] = useState(false);
-  const [navTo, setNavTo] = useState("Menu");
+  const [navTo, setNavTo] = useState("Info");
   const changeView = () => {
     navTo === "Info" ? setNavTo("Menu") : setNavTo("Info");
   };
