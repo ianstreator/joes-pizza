@@ -59,15 +59,15 @@
   .cart {
     background-color: var(--cartBackgroundColor);
     min-width: 100%;
-    min-height: 26rem;
+    min-height: 24rem;
     display: flex;
     position: sticky;
-    bottom: -22.25rem;
+    bottom: -20.25rem;
     z-index: 1;
     transition: 400ms;
     position: absolute;
     &.show {
-      transform: translateY(-22.25rem);
+      transform: translateY(-20.25rem);
     }
     .cart-head {
       color: var(--cartHeadTextColor);

@@ -60,7 +60,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
         <link
-          href="https://fonts.googleapis.com/css?family=Italianno&display=optional"
+          href="https://fonts.googleapis.com/css?family=Italianno&display=swap"
           rel="stylesheet"
         ></link>
       </Head>
