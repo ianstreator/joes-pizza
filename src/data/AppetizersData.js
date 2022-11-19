@@ -2,10 +2,10 @@ const AppetizersData = {
   quantity: [6, 12, 24],
   shareables: [
     {
-      name: "Jumbo Buffalo Wings",
+      name: "Buffalo Wings",
       prices: [8.99, 11.99, 22.99],
       description:
-        "Famous meaty wings hand-dipped in your choice of mild, medium, hot BBQ or garlic sauce, served with a side of blue cheese or ranch.",
+        "Wings with your choice of mild, medium, hot BBQ or garlic sauce, served with a side of blue cheese or ranch.",
     },
     {
       name: "Chicken Strips",

@@ -8,16 +8,23 @@ function Appetizers() {
   return (
     <div id="category">
       <h1 className="section_header">Shareables</h1>
-      <table style={{ fontSize: "1rem" }}>
+      <div className="small_container">
+        {shareables.map((app, i) => (
+          <Card key={i}>{app}</Card>
+        ))}
+      </div>
+      {/* <table>
         <thead>
           <tr>
-            <th style={{ paddingRight: "100%" }}>Name</th>
+            <th>Qauntity</th>
             {quantity.map((amount, i) => (
-              <th key={i}>{`(${amount} pcs)`}</th>
+              <th key={i}>
+                {`${amount} pcs`}
+              </th>
             ))}
           </tr>
         </thead>
-        <tbody >
+        <tbody>
           {shareables.map((app, i) => (
             <tr key={i} title={app.name}>
               <td>{app.name}</td>
@@ -27,7 +34,7 @@ function Appetizers() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
 
       <h1 className="section_header">Solos</h1>
       <div className="small_container">

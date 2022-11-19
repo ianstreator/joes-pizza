@@ -1,0 +1,18 @@
+table {
+  width: 100%;
+  background-color: var(--backgroundColorOffset);
+  thead {
+  }
+  th {
+    text-align: start;
+  }
+  tbody {
+  }
+  tr {
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    width: 100%;
+    // display: flex;
+    justify-content: space-between;
+  }
+}

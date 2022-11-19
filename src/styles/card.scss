@@ -5,7 +5,7 @@
   min-height: 6rem;
   max-height: 8rem;
   padding: 0.5rem;
-  padding-top: unset;
+  padding-top: 0.25rem;
   border-radius: 4px;
   margin-bottom: 1rem;
   display: flex;
@@ -38,8 +38,7 @@
     align-items: flex-end;
     .description {
       width: 80%;
-      font-style: italic;
-      font-weight: lighter;
+      font-size: .75rem;
     }
     .adjust_cart_icon {
       width: 40px;

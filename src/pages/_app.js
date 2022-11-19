@@ -5,6 +5,7 @@ import "../styles/card.scss";
 import "../styles/header.scss";
 import "../styles/title_contact.scss";
 import "../styles/pizza.scss";
+import "../styles/appetizers.scss";
 
 import { Provider } from "../context/CartContext";
 
