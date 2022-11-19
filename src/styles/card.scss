@@ -2,8 +2,8 @@
   background-color: var(--cardColor);
   color: hsl(0, 0%, 100%);
   width: 100%;
-  min-height: 10rem;
-  max-height: 10rem;
+  min-height: 6rem;
+  max-height: 8rem;
   padding: 0.5rem;
   padding-top: unset;
   border-radius: 4px;
@@ -20,13 +20,11 @@
     }
     .price {
       font-size: 1.25rem;
+      width: 4rem;
+      text-align: end;
       &.multi {
         display: flex;
         flex-direction: column;
-        font-size: .75rem;
-        font-weight: lighter;
-        min-width: 4rem;
-        max-width: 4rem;
         .data {
          display: flex; 
          justify-content: space-between;
@@ -39,7 +37,7 @@
     justify-content: space-between;
     align-items: flex-end;
     .description {
-      width: 70%;
+      width: 80%;
       font-style: italic;
       font-weight: lighter;
     }

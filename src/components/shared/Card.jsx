@@ -27,13 +27,14 @@ function Card({ children: { name, price, prices, description } }) {
         <p className="name">{name}</p>
         {prices ? (
           <div className="price multi">
-            {prices.map(({ size = false, quantity = false, price }, i) => (
+            {`$(${prices.length})`}
+            {/* {prices.map(({ size = false, quantity = false, price }, i) => (
               <div className="data" key={i}>
                 <div>{size ? size : quantity}</div>
                 <div>-</div>
                 <div>${price.toFixed(2)}</div>
               </div>
-            ))}
+            ))} */}
           </div>
         ) : (
           <div className="price" key={price}>

@@ -46,7 +46,7 @@ function Cart() {
         </button>
       </div>
       <div className="cart_items">
-        {Object.keys(items).length &&
+        {Object.keys(items).length > 0 &&
           Object.entries(items).map((item, i) => {
             const [itemName, itemPrice] = item;
             return (

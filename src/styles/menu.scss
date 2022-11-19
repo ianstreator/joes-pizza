@@ -76,7 +76,6 @@
       padding: 0.5rem;
       width: 100%;
       .item {
-        background-color: hsl(0, 0%, 0%, 0.25);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -86,7 +85,7 @@
         font-size: 1.1rem;
         transition: 400ms;
         &:hover {
-          background-color: hsl(0, 0%, 0%, 0.75);
+          background-color: hsl(0, 0%, 0%, 0.25);
         }
         .name {
           font-weight: bold;

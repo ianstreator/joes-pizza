@@ -10,8 +10,8 @@ const DinnersData = [
   },
 
   {
-    name: "Fried Tilapia",
-    prices: [{ quantity: "4pc", price: 16.95 }],
+    name: "Fried Tilapia (4pc)",
+    price: 16.95,
     description:
       "Flaky tilapia fillets prepared in a delightful crunchy, golden batter.",
   },
