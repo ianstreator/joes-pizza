@@ -5,30 +5,114 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .icon_wrapper {
+    background-color: hsl(0, 0%, 100%);
+    width: fit-content;
+    padding: 0.4rem;
+    border-radius: 25px;
+    display: flex;
+    border: none;
+  }
   .pizza_toggle {
     width: 100%;
     margin: 0.5rem;
+    margin-top: unset;
+  }
+  .build_your_own_pizza {
+    width: 100%;
+    .na {
+      display: flex;
+      align-items: center;
+      p {
+        margin-left: 0.25rem;
+      }
+    }
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      .option {
+        min-width: 5rem;
+        border: var(--textColor) 1px solid;
+      }
+    }
+    .toppings_menu {
+      display: flex;
+      flex-direction: column;
+      border: var(--trimColor) solid 1px;
+      height: 13rem;
+      overflow-y: scroll;
+      position: relative;
+      .nav {
+        display: flex;
+        position: fixed;
+      }
+      .toppings {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        .toppings_header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 0.5rem;
+          .options_container {
+            display: flex;
+            width: 60%;
+            .option {
+              width: 33%;
+              text-align: center;
+            }
+          }
+        }
+        .topping {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+          background-color: hsl(0, 0%, 0%, 0.25);
+          .button_container {
+            width: 60%;
+            display: flex;
+            justify-content: space-around;
+            .topping_button {
+              width: 1.5rem;
+              height: 1.5rem;
+              border: var(--textColor) 1px solid;
+              background-color: rgba(0, 0, 0, 0);
+              &.active {
+                background-color: #A3C8F5;
+              }
+            }
+          }
+        }
+      }
+    }
+    .custom_pizza {
+      background-color: var(--cartBackgroundColor);
+      color: var(--textColor);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 0.5rem;
+      border-radius: 0px 5px 5px 0px;
+      margin-top: 0.25rem;
+      .button {
+        display: flex;
+        align-items: center;
+        width: 6rem;
+        padding: 0.25rem;
+        padding-left: 0.5rem;
+        border-radius: 0px 5px 5px 0px;
+        justify-content: space-between;
+      }
+    }
   }
   .specialty_pizza {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    // .specialty_pizza_header {
-    //   background-color: var(--primaryColor);
-    //   color: hsl(0, 0%, 100%);
-    //   width: 100%;
-    //   display: flex;
-    //   justify-content: space-around;
-    //   margin-bottom: 0.5rem;
-    //   padding: 0.25rem;
-    //   font-size: 1.25rem;
-    //   .size_cost {
-    //     display: flex;
-    //     justify-content: space-around;
-    //     width: 100%;
-    //   }
-    // }
     .pizza_cards_container {
       display: flex;
       flex-direction: column;

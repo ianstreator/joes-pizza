@@ -7,7 +7,7 @@ import CartContext from "../../context/CartContext";
 function Cart() {
   const { items, total, setCartView, cartView, removeItem } =
     useContext(CartContext);
-  const imageSize = 25;
+  const imageSize = 20;
 
   return (
     <div className={clsx("cart", cartView && "show")}>
@@ -61,8 +61,8 @@ function Cart() {
                 >
                   <Image
                     src="/remove-from-cart-icon.svg"
-                    width={25}
-                    height={25}
+                    width={imageSize}
+                    height={imageSize}
                     alt="remove-item"
                   ></Image>
                 </button>

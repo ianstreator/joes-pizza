@@ -11,6 +11,7 @@
   --buttonColor: hsl(212, 65%, 30%);
   --buttonHoverColor: hsl(212, 65%, 40%);
   --textColor: hsl(0, 0%, 100%);
+  --trimColor: hsl(0, 0%, 100%);
   --info1: hsl(107, 71%, 80%);
   --info2: hsl(0, 0%, 90%);
   --info3: hsl(14, 71%, 80%);
@@ -25,6 +26,7 @@
   --backgroundColorOpposite: hsl(45, 18%, 13%);
   --backgroundColorOffset: hsl(0, 0%, 100%);
   --textColor: rgb(0, 0, 0);
+  --trimColor: hsl(213, 35%, 29%);
   --info1: hsl(213, 35%, 29%);
   --info2: hsl(213, 35%, 29%);
   --info3: hsl(213, 35%, 29%);
@@ -107,6 +109,7 @@ button {
   color: hsl(0, 0%, 100%);
   width: 100%;
   padding: 0.5rem;
+  padding-top: unset;
   display: flex;
   flex-direction: column;
   .name {

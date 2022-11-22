@@ -7,36 +7,59 @@ const prices = [
 const PizzaData = {
   BuildYourOwnPizza: {
     Sizes: {
-      personal: 10,
-      regular: 12,
+      extra_small: 10,
+      small: 12,
       medium: 14,
       large: 16,
       extra_large: 18,
     },
     Crusts: {
-      "Thin or X-Thin": [10.0, 12.0, 14.0, 16.0, 18.0],
-      "Sicilian Style Thick Crust": [12.0, 14.0, 16.0, 19.0, 20.0],
-      "Pan Pizza": [null, 17.0, null, 24.0, null],
-      "Chicago Style Deep Dish": [null, 17.0, null, 24.0, null],
-      "Original Stuffed Joe": [null, 17.0, null, 24.0, null],
-      'Gluten Free': [null, 12.0, null, null, null],
+      "Thin or X-Thin": {
+        extra_small: 10.0,
+        small: 12.0,
+        medium: 14.0,
+        large: 16.0,
+        extra_large: 18.0,
+      },
+      "Sicilian Style Thick Crust": {
+        extra_small: 12.0,
+        small: 14.0,
+        medium: 16.0,
+        large: 19.0,
+        extra_large: 20.0,
+      },
+      "Pan Pizza": {
+        small: 17.0,
+        large: 24.0,
+      },
+      "Chicago Style Deep Dish": {
+        small: 17.0,
+        large: 24.0,
+      },
+      "Original Stuffed Joe": {
+        small: 17.0,
+        large: 24.0,
+      },
+      "Gluten Free": {
+        small: 12.0,
+      },
     },
     Toppings: {
       Price: {
-        Full: [
-          { personal: 2 },
-          { regular: 2.25 },
-          { medium: 2.5 },
-          { large: 2.75 },
-          { extra_large: 3.0 },
-        ],
-        Half: [
-          { personal: 1.0 },
-          { regular: 1.15 },
-          { meduim: 1.25 },
-          { large: 1.35 },
-          { extra_large: 1.5 },
-        ],
+        Full: {
+          extra_small: 2,
+          small: 2.25,
+          medium: 2.5,
+          large: 2.75,
+          extra_large: 3.0,
+        },
+        Half: {
+          extra_small: 1.0,
+          small: 1.15,
+          medium: 1.25,
+          large: 1.35,
+          extra_large: 1.5,
+        },
       },
       Types: {
         Meat: [
@@ -70,7 +93,6 @@ const PizzaData = {
   },
 
   SpecialtyPizza: {
-    Size_Cost: prices,
     Pizza: [
       {
         name: "Joe's Fabulous Four",
@@ -89,8 +111,7 @@ const PizzaData = {
         name: "Joe's Vegetarian Delight",
         prices,
 
-        description:
-          "Spinach, mushrooms, black olives, and sliced tomatoes.",
+        description: "Spinach, mushrooms, black olives, and sliced tomatoes.",
       },
       {
         name: "Joe's BBQ Pizza",
@@ -103,8 +124,7 @@ const PizzaData = {
         name: "Honolulu Joe's",
         prices,
 
-        description:
-          "Canadian bacon and sweet onions.",
+        description: "Canadian bacon and sweet onions.",
       },
       {
         name: "Meaty Joe's",

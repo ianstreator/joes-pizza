@@ -2,18 +2,10 @@ import PizzaData from "../../../data/PizzaData";
 import Card from "../../shared/Card";
 
 function SpecialtyPizza() {
-  const Size_Cost = PizzaData.SpecialtyPizza.Size_Cost;
   const Pizzas = PizzaData.SpecialtyPizza.Pizza;
   const Calzones_Panzerotti = PizzaData.SpecialtyPizza.Other;
   return (
     <main className="specialty_pizza">
-      {/* <header className="specialty_pizza_header">
-        <div className="size_cost">
-          {Size_Cost.map(({ size, price }, i) => (
-            <small key={i}>{`${size} / $${price}`}</small>
-          ))}
-        </div>
-      </header> */}
       <section className="pizza_cards_container">
         {Pizzas.map((PizzaInfo, i) => {
           return <Card key={i}>{PizzaInfo}</Card>;
