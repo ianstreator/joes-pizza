@@ -39,25 +39,39 @@
       display: flex;
       flex-direction: column;
       border: var(--trimColor) solid 1px;
-      height: 13rem;
+      height: fit-content;
+      height: 14rem;
       overflow-y: scroll;
-      position: relative;
+      overflow-x:hidden;
+
       .nav {
         display: flex;
-        position: fixed;
+        position: relative;
+        z-index: inherit;
+        ul {
+          justify-content: space-around;
+          li {
+            min-width: 5rem;
+            max-width: 5rem;
+          }
+        }
       }
       .toppings {
         display: flex;
         flex-direction: column;
-        padding: 0.5rem;
         .toppings_header {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          margin-bottom: 0.5rem;
+          padding: 0.25rem;
+          background-color: var(--cartBackgroundColor);
+          color: var(--textColor);
+          position: sticky;
+          top: 0;
           .options_container {
             display: flex;
             width: 60%;
+            margin-left: auto;
             .option {
               width: 33%;
               text-align: center;
@@ -68,8 +82,10 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
+          margin-top: 1rem;
           margin-bottom: 1rem;
-          background-color: hsl(0, 0%, 0%, 0.25);
+          padding: 0.25rem;
+          // background-color: hsl(0, 0%, 0%, 0.25);
           .button_container {
             width: 60%;
             display: flex;
@@ -80,7 +96,7 @@
               border: var(--textColor) 1px solid;
               background-color: rgba(0, 0, 0, 0);
               &.active {
-                background-color: #A3C8F5;
+                background-color: #a3c8f5;
               }
             }
           }
@@ -96,7 +112,7 @@
       align-items: center;
       padding-left: 0.5rem;
       border-radius: 0px 5px 5px 0px;
-      margin-top: 0.25rem;
+      margin-top: 0.5rem;
       .button {
         display: flex;
         align-items: center;

@@ -1,8 +1,8 @@
 .info-container {
   background-color: var(--backgroundColorOffset);
   color: var(--secondaryColor);
-  min-height: 28rem;
-  max-height: 28rem;
+  min-height: 30rem;
+  max-height: 30rem;
   width: 100%;
   padding: 0.5rem;
   padding-top: unset;
@@ -13,14 +13,16 @@
     text-underline-offset: 3px;
     font-weight: lighter;
   }
+  .row {
+    display: flex;
+    margin-left: 0.25rem;
+    align-items: center;
+    .data {
+      margin-left: 0.25rem;
+    }
+  }
   .type {
     font-weight: bolder;
-  }
-  .data {
-    display: flex;
-    align-items: center;
-    margin-left: .25rem;
-    text-indent: .25rem;
   }
 
   .info {

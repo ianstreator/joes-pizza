@@ -21,7 +21,6 @@ function BuildYourOwnPizza() {
   const selectSize = (e) => {
     setSize(e);
     setCrust("");
-    setToppings({});
   };
   const selectCrust = (e) => {
     setCrust(e);
@@ -45,17 +44,15 @@ function BuildYourOwnPizza() {
     let costOfCrust = crust[1] ? crust[1] : 0;
     const toppingsList = Object.values(toppings);
     if (toppingsList.length) {
-      console.log(toppings);
       const currentToppingsCost = toppingsList.reduce((acc, curr) => {
         const pricingDependency = curr === "Full" ? "Full" : "Half";
         const sizeName = Object.keys(size)[0];
-        console.log(sizeName, pricingDependency);
-        console.log(toppingsData.Price[pricingDependency][sizeName])
         return (acc += toppingsData.Price[pricingDependency][sizeName]);
       }, 0);
       costOfToppings = currentToppingsCost;
     }
     setCost(costOfCrust + costOfToppings);
+    console.log(pizza);
   }, [crust, toppings, size, toppingsData.Price]);
 
   const normalizeObjectKeyString = (obj) => {
@@ -130,18 +127,17 @@ function BuildYourOwnPizza() {
         <div>
           {<h4 className="section">Toppings</h4>}
           <div className="toppings_menu">
-            <div className="nav">
-              <ul>
-                {Object.keys(toppingsData.Types).map((type, i) => (
-                  <li key={i} onClick={() => setToppingsNav(type)}>
-                    {type}
-                  </li>
-                ))}
-              </ul>
-            </div>
             <div className="toppings">
+              <div className="nav">
+                <ul>
+                  {Object.keys(toppingsData.Types).map((type, i) => (
+                    <li key={i} onClick={() => setToppingsNav(type)}>
+                      {type}
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <div className="toppings_header">
-                <p>Name</p>
                 <div className="options_container">
                   <div className="option">LEFT</div>
                   <div className="option">FULL</div>

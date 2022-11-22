@@ -72,7 +72,7 @@ const PizzaData = {
           "Italian Beef",
           "Anchovies",
         ],
-        Vegetables: [
+        Veggie: [
           "Fresh Garlic",
           "Sliced Tomatoes",
           "Spinach",

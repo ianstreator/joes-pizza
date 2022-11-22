@@ -2,8 +2,8 @@
 .menu {
   background-color: var(--backgroundColorOffset);
   color: var(--textColor);
-  min-height: 28rem;
-  max-height: 28rem;
+  min-height: 30rem;
+  max-height: 30rem;
   min-width: 100%;
   max-width: 100%;
   align-items: center;
@@ -23,7 +23,7 @@
       li {
         color: hsl(0, 0%, 100%);
         min-width: 6.5em;
-        padding: .5rem;
+        padding: .75rem;
         list-style: none;
         text-align: center;
         transition: 400ms;
@@ -50,7 +50,7 @@
     justify-content: center;
     padding: 1rem;
     padding-top: 0.5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 3.5rem;
     overflow-y: scroll;
     .section_header {
       margin-right: auto;
@@ -66,12 +66,12 @@
     display: flex;
     flex-direction: column;
     position: sticky;
-    bottom: -21.4rem;
+    bottom: -21rem;
     z-index: 1;
     transition: 400ms;
     position: absolute;
     &.show {
-      transform: translateY(-21.4rem);
+      transform: translateY(-21rem);
     }
     .cart_items {
       padding: 0.5rem;
@@ -104,10 +104,11 @@
       background-color: var(--cartBackgroundColor);
       color: var(--cartHeadTextColor);
       min-width: 100%;
-      height: 2.75rem;
+      height: 3rem;
       padding: 0.3rem;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -118,13 +119,15 @@
       .icon_wrapper {
         background-color: var(--cartIconBackgroundColor);
         width: fit-content;
-        padding: 0.4rem;
+        height: fit-content;
+        padding: 0.4em;
         border-radius: 25px;
         display: flex;
         border: none;
       }
       .arrow {
         background-color: var(--buttonColor);
+        padding: .5rem;
         &:hover {
           background-color: var(--buttonHoverColor);
         }
