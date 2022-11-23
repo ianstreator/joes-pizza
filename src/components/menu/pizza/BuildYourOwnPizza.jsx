@@ -9,22 +9,11 @@ function BuildYourOwnPizza() {
   const [crust, setCrust] = useState(false);
   const [toppings, setToppings] = useState({});
   const [toppingsNav, setToppingsNav] = useState("Meat");
-  const [pizza, setPizza] = useState({
-    toppings,
-    size,
-    crust,
-  });
+  const [pizza, setPizza] = useState({});
   const sizeData = PizzaData.BuildYourOwnPizza.Sizes;
   const crustData = PizzaData.BuildYourOwnPizza.Crusts;
   const toppingsData = PizzaData.BuildYourOwnPizza.Toppings;
 
-  const selectSize = (e) => {
-    setSize(e);
-    setCrust("");
-  };
-  const selectCrust = (e) => {
-    setCrust(e);
-  };
   const selectTopping = ({ name, position }) => {
     const updatedToppings = toppings;
     updatedToppings[name] === position
@@ -33,15 +22,15 @@ function BuildYourOwnPizza() {
     setToppings({ ...updatedToppings });
   };
 
-  const clearAllSelections = () => {
-    setSize("");
-    setCrust("");
-    setToppings({});
+  const selectSize = (size) => {
+    setSize(size);
+    setCrust(false);
   };
 
   useEffect(() => {
     let costOfToppings = 0;
-    let costOfCrust = crust[1] ? crust[1] : 0;
+    const crustPrice = Object.values(crust)[0];
+    let costOfCrust = crustPrice ? crustPrice : 0;
     const toppingsList = Object.values(toppings);
     if (toppingsList.length) {
       const currentToppingsCost = toppingsList.reduce((acc, curr) => {
@@ -52,147 +41,157 @@ function BuildYourOwnPizza() {
       costOfToppings = currentToppingsCost;
     }
     setCost(costOfCrust + costOfToppings);
-    console.log(pizza);
+    setPizza({
+      size,
+      crust,
+      toppings,
+      cost,
+    });
   }, [crust, toppings, size, toppingsData.Price]);
-
-  const normalizeObjectKeyString = (obj) => {
-    const key = Object.keys(obj)[0];
-    const value = Object.values(obj)[0];
-    if (key.includes("_")) {
-      const splitKey = key.split("_");
-      const key1 = splitKey[0].charAt(0).toUpperCase() + splitKey[0].slice(1);
-      const key2 = splitKey[1].charAt(0).toUpperCase() + splitKey[1].slice(1);
-      const normalizedKey = `${key1} ${key2} ${value}"`;
-      return normalizedKey;
-    }
-    const normalizedKey = key.charAt(0).toUpperCase() + key.slice(1);
-    return normalizedKey.concat(` ${value}"`);
-  };
 
   return (
     <>
       <div className="build_your_own_pizza">
         <div>
-          <div className={clsx("section", size && "na")}>
+          <div className="section na">
             <h4>Size</h4>
-            {size && <p>- {normalizeObjectKeyString(size)}</p>}
+            {size && <p>- {Object.keys(size)[0]}</p>}
           </div>
           <div className="options">
-            {!size &&
-              Object.entries(sizeData).map(([type, s], i) => {
-                const abr = type.split("_");
+            {Object.entries(sizeData).map(([name, inches], i) => {
+              return (
+                <button
+                  key={i}
+                  className={clsx(
+                    "option",
+                    inches === Object.values(size)[0] && "active"
+                  )}
+                  onClick={() => selectSize({ [name]: inches })}
+                  value={inches}
+                >
+                  {inches + '"'}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+        <div>
+          <div className="section na">
+            <h4>Crust</h4>
+            {!size && <p>- Select a size</p>}
+            {size && !crust && (
+              <p>
+                -{" ("}
+                {
+                  Object.values(crustData).filter(
+                    (obj) => obj[Object.keys(size)[0]]
+                  ).length
+                }
+                {") "}
+                options
+              </p>
+            )}
+            {crust && <p>- {Object.keys(crust)[0]}</p>}
+          </div>
+          <div className="options">
+            {Object.entries(crustData).map(([crustName, crustValues], i) => {
+              const sizeName = Object.keys(size)[0];
+              const crustValue = crustValues[sizeName];
+              if (crustData[crustName][sizeName]) {
                 return (
                   <button
                     key={i}
-                    className={clsx("option", s === size && "chosen")}
-                    onClick={() => selectSize({ [type]: s })}
-                    value={s}
+                    className={clsx(
+                      "option",
+                      crustName === Object.keys(crust)[0] && "active"
+                    )}
+                    onClick={() => setCrust({ [crustName]: crustValue })}
                   >
-                    {`${
-                      abr.length > 1
-                        ? `${abr[0][1] + abr[1][0]}`.toUpperCase() + ` ${s}"`
-                        : abr[0][0].toUpperCase() + ` ${s}"`
-                    }`}
+                    {crustName}
                   </button>
                 );
-              })}
+              }
+            })}
           </div>
         </div>
         <div>
-          <div className={clsx("section", (!size || crust) && "na")}>
-            <h4>Crust</h4>
+          <div className="section na">
+            <h4>Toppings</h4>
             {!size && <p>- Select a size</p>}
-            {crust && <p>- {crust[0]}</p>}
           </div>
-          <div className="options">
-            {size &&
-              !crust &&
-              Object.entries(crustData).map(([crustName, crustValues], i) => {
-                const sizeName = Object.keys(size)[0];
-                const crustValue = crustValues[sizeName];
-                if (crustData[crustName][sizeName]) {
-                  return (
-                    <button
-                      key={i}
-                      className="option"
-                      onClick={() => selectCrust([crustName, crustValue])}
-                    >
-                      {crustName}
-                    </button>
-                  );
-                }
-              })}
-          </div>
-        </div>
-        <div>
-          {<h4 className="section">Toppings</h4>}
-          <div className="toppings_menu">
-            <div className="toppings">
-              <div className="nav">
-                <ul>
-                  {Object.keys(toppingsData.Types).map((type, i) => (
-                    <li key={i} onClick={() => setToppingsNav(type)}>
-                      {type}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="toppings_header">
-                <div className="options_container">
-                  <div className="option">LEFT</div>
-                  <div className="option">FULL</div>
-                  <div className="option">RIGHT</div>
+          {size && (
+            <div className="toppings_menu">
+              <div className="toppings">
+                <div className="nav">
+                  <ul>
+                    {Object.keys(toppingsData.Types).map((type, i) => (
+                      <li
+                        key={i}
+                        className={clsx(toppingsNav === type && "active")}
+                        onClick={() => setToppingsNav(type)}
+                      >
+                        {type}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
+                <div className="toppings_header">
+                  <div className="options_container">
+                    <div className="option">LEFT</div>
+                    <div className="option">FULL</div>
+                    <div className="option">RIGHT</div>
+                  </div>
+                </div>
 
-              {toppingsNav &&
-                Object.values(toppingsData.Types[toppingsNav]).map(
-                  (topping, i) => (
-                    <div key={i} className="topping">
-                      <p>{topping}</p>
-                      <div className="button_container">
-                        <button
-                          className={clsx(
-                            "topping_button",
-                            toppings[topping] === "Left" && "active"
-                          )}
-                          onClick={() =>
-                            selectTopping({
-                              name: topping,
-                              position: "Left",
-                            })
-                          }
-                        ></button>
-                        <button
-                          className={clsx(
-                            "topping_button",
-                            toppings[topping] === "Full" && "active"
-                          )}
-                          onClick={() =>
-                            selectTopping({
-                              name: topping,
-                              position: "Full",
-                            })
-                          }
-                        ></button>
-                        <button
-                          className={clsx(
-                            "topping_button",
-                            toppings[topping] === "Right" && "active"
-                          )}
-                          onClick={() =>
-                            selectTopping({
-                              name: topping,
-                              position: "Right",
-                            })
-                          }
-                        ></button>
+                {toppingsNav &&
+                  Object.values(toppingsData.Types[toppingsNav]).map(
+                    (topping, i) => (
+                      <div key={i} className="topping">
+                        <p>{topping}</p>
+                        <div className="button_container">
+                          <button
+                            className={clsx(
+                              "topping_button",
+                              toppings[topping] === "Left" && "active"
+                            )}
+                            onClick={() =>
+                              selectTopping({
+                                name: topping,
+                                position: "Left",
+                              })
+                            }
+                          ></button>
+                          <button
+                            className={clsx(
+                              "topping_button",
+                              toppings[topping] === "Full" && "active"
+                            )}
+                            onClick={() =>
+                              selectTopping({
+                                name: topping,
+                                position: "Full",
+                              })
+                            }
+                          ></button>
+                          <button
+                            className={clsx(
+                              "topping_button",
+                              toppings[topping] === "Right" && "active"
+                            )}
+                            onClick={() =>
+                              selectTopping({
+                                name: topping,
+                                position: "Right",
+                              })
+                            }
+                          ></button>
+                        </div>
                       </div>
-                    </div>
-                  )
-                )}
+                    )
+                  )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
         <div className="custom_pizza">
           Custom Pizza
