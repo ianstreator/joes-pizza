@@ -3,18 +3,21 @@
   color: hsl(0, 0%, 100%);
   width: 100%;
   font-size: 0.8rem;
-  @media screen and (min-width: 1000px) {
-    padding: .5rem;
+  padding: .5rem;
+  @media screen and (min-width: 600px) {
     font-size: 1.1rem;
   }
   .header_content {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0.5rem;
+    p {
+      margin-right: 1rem;
+    }
     @media screen and (min-width: 1000px) {
-      margin-right: 6rem;
-      justify-content: space-around;
+      // margin-right: 6rem;
+      // justify-content: space-between;
+      padding: .5rem;
     }
 
     .theme_toggle {
