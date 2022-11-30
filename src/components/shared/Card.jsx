@@ -3,39 +3,20 @@ import CartContext from "../../context/CartContext";
 import { useContext, useEffect, useState } from "react";
 
 function Card({ children: { name, price, prices, description } }) {
-  const { addItem, removeItem, items } = useContext(CartContext);
+  const { items, adjustCart } = useContext(CartContext);
   const [inCart, setInCart] = useState(false);
-  const addToCartSize = 25;
-
-  const adjustCart = ({ itemName, itemPrice }) => {
-    if (typeof itemPrice !== "number") return
-    if (inCart) {
-      removeItem(itemName);
-      setInCart(false);
-    } else {
-      addItem({ itemName, itemPrice });
-      setInCart(true);
-    }
-  };
+  const iconSize = 25;
 
   useEffect(() => {
-    setInCart(items[name])
-  },[items])
+    setInCart(items[name]);
+  }, [items]);
+  
   return (
     <div className="card">
       <div className="top_card">
         <p className="name">{name}</p>
         {prices ? (
-          <div className="price multi">
-            {`$(${prices.length})`}
-            {/* {prices.map(({ size = false, quantity = false, price }, i) => (
-              <div className="data" key={i}>
-                <div>{size ? size : quantity}</div>
-                <div>-</div>
-                <div>${price.toFixed(2)}</div>
-              </div>
-            ))} */}
-          </div>
+          <div className="price multi">{`$(${prices.length})`}</div>
         ) : (
           <div className="price" key={price}>
             ${price.toFixed(2)}
@@ -57,8 +38,8 @@ function Card({ children: { name, price, prices, description } }) {
             src={
               inCart ? "/remove-from-cart-icon.svg" : "/add-to-cart-icon.svg"
             }
-            width={addToCartSize}
-            height={addToCartSize}
+            width={iconSize}
+            height={iconSize}
             alt="adjust_cart"
           ></Image>
         </button>

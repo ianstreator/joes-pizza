@@ -2,17 +2,29 @@
   background-color: var(--primaryColor);
   color: hsl(0, 0%, 100%);
   width: 100%;
-  font-size: .8rem;
+  font-size: 0.8rem;
+  @media screen and (min-width: 1000px) {
+    padding: .5rem;
+    font-size: 1.1rem;
+  }
   .header_content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0.5rem;
+    @media screen and (min-width: 1000px) {
+      margin-right: 6rem;
+      justify-content: space-around;
+    }
+
     .theme_toggle {
       background-color: var(--backgroundColorOpposite);
-      padding: 0.1rem;
+      padding: 0.125rem;
       border-radius: 25px;
       cursor: pointer;
+      margin: 0.5rem;
+      position: absolute;
+      right: 0;
       .toggle_background {
         background-color: var(--primaryColor);
         display: flex;

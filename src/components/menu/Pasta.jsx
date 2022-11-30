@@ -1,4 +1,4 @@
-import Pastas from "../../data/PastasData";
+import Pastas from "../../data/PastaData";
 import Card from "../shared/Card";
 
 function Pasta() {

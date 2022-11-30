@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 function Header({ isMobile, setTheme, theme }) {
-  const themeToggleSize = 15;
+  const themeToggleSize = isMobile ? 15 : 25;
 
   return (
     <header className="header">

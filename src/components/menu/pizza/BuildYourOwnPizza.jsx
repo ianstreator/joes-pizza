@@ -1,53 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import PizzaData from "../../../data/PizzaData";
 import clsx from "clsx";
 import Image from "next/image";
+import { AiOutlineDelete } from "react-icons/ai";
+
+import CartContext from "../../../context/CartContext";
+import PizzaContext from "../../../context/PizzaContext";
 
 function BuildYourOwnPizza() {
-  const [cost, setCost] = useState(0);
-  const [size, setSize] = useState(false);
-  const [crust, setCrust] = useState(false);
-  const [toppings, setToppings] = useState({});
-  const [toppingsNav, setToppingsNav] = useState("Meat");
-  const [pizza, setPizza] = useState({});
+  const { adjustCart, items } = useContext(CartContext);
+  const {
+    cost,
+    size,
+    crust,
+    setCrust,
+    toppings,
+    toppingsNav,
+    setToppingsNav,
+    selectSize,
+    selectTopping,
+    clearPizza,
+    pizzaNumber,
+    setPizzaNumber,
+  } = useContext(PizzaContext);
+
   const sizeData = PizzaData.BuildYourOwnPizza.Sizes;
   const crustData = PizzaData.BuildYourOwnPizza.Crusts;
   const toppingsData = PizzaData.BuildYourOwnPizza.Toppings;
-
-  const selectTopping = ({ name, position }) => {
-    const updatedToppings = toppings;
-    updatedToppings[name] === position
-      ? delete updatedToppings[name]
-      : (updatedToppings[name] = position);
-    setToppings({ ...updatedToppings });
-  };
-
-  const selectSize = (size) => {
-    setSize(size);
-    setCrust(false);
-  };
-
-  useEffect(() => {
-    let costOfToppings = 0;
-    const crustPrice = Object.values(crust)[0];
-    let costOfCrust = crustPrice ? crustPrice : 0;
-    const toppingsList = Object.values(toppings);
-    if (toppingsList.length) {
-      const currentToppingsCost = toppingsList.reduce((acc, curr) => {
-        const pricingDependency = curr === "Full" ? "Full" : "Half";
-        const sizeName = Object.keys(size)[0];
-        return (acc += toppingsData.Price[pricingDependency][sizeName]);
-      }, 0);
-      costOfToppings = currentToppingsCost;
-    }
-    setCost(costOfCrust + costOfToppings);
-    setPizza({
-      size,
-      crust,
-      toppings,
-      cost,
-    });
-  }, [crust, toppings, size, toppingsData.Price]);
 
   return (
     <>
@@ -195,7 +174,31 @@ function BuildYourOwnPizza() {
         </div>
         <div className="custom_pizza">
           Custom Pizza
-          <button className="button">
+          {size && (
+            <button
+              style={{
+                backgroundColor: "hsl(360,30%,40%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginLeft: ".5rem",
+              }}
+              onClick={() => clearPizza()}
+            >
+              <AiOutlineDelete size={17} />
+            </button>
+          )}
+          <button
+            className="button"
+            onClick={() => {
+              if (!crust) return;
+              adjustCart({
+                itemName: `${Object.values(size)[0]}" Custom Pizza`,
+                itemPrice: cost,
+              });
+              clearPizza();
+            }}
+          >
             ${cost.toFixed(2)}
             <div className="icon_wrapper">
               <Image

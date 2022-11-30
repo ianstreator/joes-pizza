@@ -31,6 +31,7 @@
       display: flex;
       overflow-x: scroll;
       padding-right: 3rem;
+      margin-bottom: .5rem;
       // &::after {
       //   content: "";
       //   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--backgroundColorOffset));
@@ -45,6 +46,7 @@
         width: 5rem;
         min-width: fit-content;
         font-size: 1rem;
+        margin-right: 1rem;
         background-color: var(--cartBackgroundColor);
         color: var(--textColor);
         border: var(--textColor) 1px solid;
@@ -142,7 +144,6 @@
       color: var(--textColor);
       width: 100%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
       padding-left: 0.5rem;
       border-radius: 0px 5px 5px 0px;
@@ -153,6 +154,7 @@
         width: 6rem;
         padding: 0.25rem;
         padding-left: 0.4rem;
+        margin-left: auto;
         border-radius: 0px 5px 5px 0px;
         justify-content: space-between;
         font-size: .8rem;

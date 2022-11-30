@@ -40,7 +40,7 @@ function Menu() {
     document.getElementById("menu").scrollTop = 0;
   }, [selected]);
   return (
-    <>
+    <div className="menu_cart_container">
       <div className="menu" id="menu">
         <nav className="nav">
           <ul>
@@ -60,9 +60,9 @@ function Menu() {
           </ul>
         </nav>
         <div className="selected">{menuCategories[selected]}</div>
-        <Cart />
       </div>
-    </>
+      <Cart />
+    </div>
   );
 }
 

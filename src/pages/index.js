@@ -31,7 +31,7 @@ export default function Home() {
     content = (
       <>
         <div className="main_content_container">
-          <TitleContact />
+          <TitleContact isMobile={isMobile} />
           <div
             style={{
               position: "relative",

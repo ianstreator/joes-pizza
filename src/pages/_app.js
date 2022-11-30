@@ -5,15 +5,17 @@ import "../styles/card.scss";
 import "../styles/header.scss";
 import "../styles/title_contact.scss";
 import "../styles/pizza.scss";
-import "../styles/appetizers.scss";
 
-import { Provider } from "../context/CartContext";
+import { CartProvider } from "../context/CartContext";
+import { PizzaProvider } from "../context/PizzaContext";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Provider>
-      <Component {...pageProps} />
-    </Provider>
+    <CartProvider>
+      <PizzaProvider>
+        <Component {...pageProps} />
+      </PizzaProvider>
+    </CartProvider>
   );
 }
 

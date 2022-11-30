@@ -1,4 +1,4 @@
-import DessertsData from "../../data/DessertsData";
+import DessertsData from "../../data/DessertData";
 import Card from "../shared/Card";
 
 function Desserts() {
